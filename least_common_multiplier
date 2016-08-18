@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Least Common Multiplier
+# key: lcm
+# --
+template <typename T>
+T LCM(T a, T b) {
+  return a / GCD(a, b) * b;
+}

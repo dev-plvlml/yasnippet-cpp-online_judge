@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: for T tests
+# key: tests
+# --
+int t;
+for (cin >> t; t > 0; --t) {
+  `yas-selected-text`$0
+}

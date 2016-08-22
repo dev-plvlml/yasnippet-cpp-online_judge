@@ -16,7 +16,7 @@ class BIT3d {
     }
   }
 
-  T Query(size_t i0, size_t j0, size_t k0) {
+  T Query(size_t i0, size_t j0, size_t k0) const {
     T result = init_;
     for (int i = int(i0); i >= 0; i = F(i) - 1) {
       for (int j = int(j0); j >= 0; j = F(j) - 1) {
@@ -28,7 +28,7 @@ class BIT3d {
     return result;
   }
 
-  T Query(size_t i1, size_t i2, size_t j1, size_t j2, size_t k1, size_t k2) {
+  T Query(size_t i1, size_t i2, size_t j1, size_t j2, size_t k1, size_t k2) const {
     T result = Query(i2, j2, k2);
     if (i1) { result = InvFunction()(result, Query(i1 - 1, j2, k2)); }
     if (j1) { result = InvFunction()(result, Query(i2, j1 - 1, k2)); }
@@ -51,8 +51,8 @@ class BIT3d {
   }
 
  protected:
-  inline size_t F(size_t i) { return i & (i+1); }
-  inline size_t H(size_t i) { return i | (i+1); }
+  static size_t F(size_t i) { return i & (i+1); }
+  static size_t H(size_t i) { return i | (i+1); }
 
  private:
   vector<vector<vector<T>>> tree_;

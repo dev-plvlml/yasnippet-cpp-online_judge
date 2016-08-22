@@ -10,7 +10,7 @@ class BIT {
         init_(init)
   {}
 
-  T Query(size_t i0) {
+  T Query(size_t i0) const {
     T result = init_;
     for (int i = int(i0); i >= 0; i = F(i) - 1) {
       result = Function()(result, tree_[i]);
@@ -18,7 +18,7 @@ class BIT {
     return result;
   }
 
-  T Query(size_t p, size_t r) {
+  T Query(size_t p, size_t r) const {
     T result = Query(r);
     if (p) { result = InvFunction()(result, Query(p - 1)); }
     return result;
@@ -31,8 +31,8 @@ class BIT {
   }
 
  protected:
-  size_t F(size_t i) { return i & (i+1); }
-  size_t H(size_t i) { return i | (i+1); }
+  static size_t F(size_t i) { return i & (i+1); }
+  static size_t H(size_t i) { return i | (i+1); }
 
  private:
   vector<T> tree_;

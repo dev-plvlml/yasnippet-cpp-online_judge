@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Prefix Search Trie <extc++>
+# key: trie
+# --
+using prefix_stringset = trie<string, null_type, trie_string_access_traits<>,
+                              pat_trie_tag, trie_prefix_search_node_update>;
+
+template <typename T>
+using prefix_stringmap = trie<string, T, trie_string_access_traits<>,
+                              pat_trie_tag, trie_prefix_search_node_update>;

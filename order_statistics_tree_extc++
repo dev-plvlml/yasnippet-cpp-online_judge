@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Order Statistic Tree <extc++>
+# key: ostree
+# --
+template <typename Key, class Compare = less<Key> >
+using ordered_set = tree<Key, null_type, Compare,
+                         rb_tree_tag, tree_order_statistics_node_update>;
+
+template <typename Key, typename T, class Compare = less<Key> >
+using ordered_map = tree<Key, T, Compare,
+                         rb_tree_tag, tree_order_statistics_node_update>;

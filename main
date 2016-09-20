@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: ONLINE_JUDGE
-# key: oj
+# key: main
 # --
 #ifdef __GNUC__
 

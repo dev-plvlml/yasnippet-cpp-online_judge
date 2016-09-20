@@ -1,6 +1,3 @@
-# -*- mode: snippet -*-
-# name: Greatest Common Divisor (by modulo, recursive)
-# --
 template <typename T>
 T GCD(T a, T b) {
   if (b != 0) {

@@ -2,41 +2,8 @@
 # name: Binary Indexed Tree (Fenwick Tree)
 # key: bit
 # --
-template <typename T, class Function = plus<T>, class InvFunction = minus<T> >
-class BIT {
- public:
-  BIT(size_t size, T init = T())
-      : tree_(size, init),
-        init_(init)
-  {}
-
-  T Query(size_t i0) const {
-    T result = init_;
-    for (int i = int(i0); i >= 0; i = F(i) - 1) {
-      result = Function()(result, tree_[i]);
-    }
-    return result;
-  }
-
-  T Query(size_t p, size_t r) const {
-    T result = Query(r);
-    if (p) { result = InvFunction()(result, Query(p - 1)); }
-    return result;
-  }
-
-  void Update(size_t i0, T delta) {
-    for (size_t i = i0; i < tree_.size(); i = H(i)) {
-      tree_[i] = Function()(tree_[i], delta);
-    }
-  }
-
- protected:
-  static size_t F(size_t i) { return i & (i+1); }
-  static size_t H(size_t i) { return i | (i+1); }
-
- private:
-  vector<T> tree_;
-  T init_;
-};
-
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/binary_indexed_tree.h" (car yas-snippet-dirs)))
+   (buffer-string))`
 BIT<${1:int}> ${2:bit}(${3:n + 1});

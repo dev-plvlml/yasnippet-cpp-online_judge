@@ -1,6 +1,3 @@
-# -*- mode: snippet -*-
-# name: Greatest Common Divisor (Euclidean)
-# --
 template <typename T>
 T GCD(T a, T b) {
   if (a != 0 && b != 0) {

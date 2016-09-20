@@ -1,6 +1,3 @@
-# -*- mode: snippet -*-
-# name: Binomial Coefficient (integer)
-# --
 template <typename T>
 T Comb(T n, T k) {
   if (k > n)

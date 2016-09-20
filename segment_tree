@@ -2,71 +2,8 @@
 # name: Segment Tree
 # key: segm
 # --
-template <typename T, class Function = plus<T> >
-class SegmentTree {
- public:
-  template <typename U>
-  SegmentTree(const vector<U>& values)
-      : tree_(4 * values.size()),
-        size_(values.size()) {
-    Build(values, Root(), 0, size_);
-  }
-
-  T Query(size_t first, size_t last_incl) const {
-    return Query(first, last_incl + 1, Root(), 0, size_);
-  }
-
-  template <typename U>
-  void Update(size_t pos, U value) {
-    Update(pos, value, Root(), 0, size_);
-  }
-
- protected:
-  static constexpr size_t Root() { return 0; }
-  static size_t Left(size_t i) { return 2*i + 1; }
-  static size_t Right(size_t i) { return 2*i + 2; }
-  static size_t Parent(size_t i) { return (i-1) / 2; }
-
- private:
-  template <typename U>
-  T Build(const vector<U>& values, size_t v, size_t lv, size_t rv) {
-    if (rv - lv == 1) {
-      return tree_[v] = values[lv];
-    }
-    size_t mv = (lv + rv) / 2;
-    return tree_[v] = Function()(Build(values, Left(v), lv, mv),
-                                 Build(values, Right(v), mv, rv));
-  }
-
-  T Query(size_t l, size_t r, size_t v, size_t lv, size_t rv) const {
-    if (l == lv && r == rv) {
-      return tree_[v];
-    }
-    size_t mv = (lv + rv) / 2;
-    if (r <= mv) { return Query(l, r, Left(v), lv, mv); }
-    if (l >= mv) { return Query(l, r, Right(v), mv, rv); }
-    return Function()(Query(l, mv, Left(v), lv, mv),
-                      Query(mv, r, Right(v), mv, rv));
-  }
-
-  template <typename U>
-  void Update(size_t pos, U value, size_t v, size_t lv, size_t rv) {
-    if (rv - lv == 1) {
-      tree_[v] = value;
-      return;
-    }
-    size_t mv = (lv + rv) / 2;
-    if (pos < mv) {
-      Update(pos, value, Left(v), lv, mv);
-    } else {
-      Update(pos, value, Right(v), mv, rv);
-    }
-    tree_[v] = Function()(tree_[Left(v)], tree_[Right(v)]);
-  }
-
- private:
-  vector<T> tree_;
-  size_t size_;
-};
-
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/segment_tree.h" (car yas-snippet-dirs)))
+   (buffer-string))`
 SegmentTree<${1:int}> ${2:segm}(${3:n + 1});

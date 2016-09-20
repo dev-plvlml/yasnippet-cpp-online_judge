@@ -2,7 +2,7 @@
 # name: Least Common Multiplier
 # key: lcm
 # --
-template <typename T>
-T LCM(T a, T b) {
-  return a / GCD(a, b) * b;
-}
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/least_common_multiplier.h" (car yas-snippet-dirs)))
+   (buffer-string))`

@@ -2,12 +2,7 @@
 # name: Greatest Common Divisor (by modulo)
 # key: gcd
 # --
-template <typename T>
-T GCD(T a, T b) {
-  while (b != 0) {
-    T tmp = a;
-    a = b;
-    b = tmp % b;
-  }
-  return a;
-}
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/greatest_common_divisor_by_modulo.h" (car yas-snippet-dirs)))
+   (buffer-string))`

@@ -21,7 +21,15 @@ using namespace __gnu_cxx;
 #include <ext/pb_ds/trie_policy.hpp>
 using namespace __gnu_pbds;
 
-#endif  // __GNUC__
+#else
+
+#include <cmath>
+#include <cstdio>
+#include <iostream>
+#include <limits>
+#include <utility>
+
+#endif
 
 #define X first
 #define Y second

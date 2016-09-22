@@ -9,8 +9,8 @@ class SegmentTree {
   }
 
   template <class Visitor>
-  void Accept(size_t first, size_t last_incl, Visitor& visitor) const {
-    Accept(first, last_incl + 1, visitor, Root(), 0, size_);
+  Visitor& Accept(size_t first, size_t last_incl, Visitor& visitor) const {
+    return Accept(first, last_incl + 1, visitor, Root(), 0, size_);
   }
 
   template <typename U = T>
@@ -34,15 +34,17 @@ class SegmentTree {
 
  private:
   template <class Visitor>
-  void Accept(size_t l, size_t r, Visitor& visitor, size_t v, size_t lv, size_t rv) const {
+  Visitor& Accept(size_t l, size_t r, Visitor& visitor, size_t v, size_t lv, size_t rv) const {
     if (l == lv && r == rv) {
-      return visitor(tree_[v]);
+      visitor(tree_[v]);
+      return visitor;
     }
     size_t mv = (lv + rv) / 2;
     if (r <= mv) { return Accept(l, r, visitor, Left(v), lv, mv); }
     if (l >= mv) { return Accept(l, r, visitor, Right(v), mv, rv); }
     Accept(l, mv, visitor, Left(v), lv, mv);
     Accept(mv, r, visitor, Right(v), mv, rv);
+    return visitor;
   }
 
   template <typename U = T>

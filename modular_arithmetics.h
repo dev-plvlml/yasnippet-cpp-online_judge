@@ -2,9 +2,9 @@ template <typename T>
 T PlusMod(T a, T b, T m) {
   a %= m;
   b %= m;
-  // According to a formula:
+  // Naive approach:
   // return (a + b) % m;
-  // Without integer overflow:
+  // Reducing integer overflow:
   T sum = a - m + b;
   return sum < 0 ? sum + m : sum;
 }

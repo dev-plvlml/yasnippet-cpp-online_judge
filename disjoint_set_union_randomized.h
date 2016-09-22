@@ -9,7 +9,7 @@ class DSU {
     if (parent_[key] == key) {
       return parent_[key];
     } else {
-      // Without path compression:
+      // Naive approach:
       // return FindSet(parent_[key]); 
       // With path compression:
       return parent_[key] = FindSet(parent_[key]);

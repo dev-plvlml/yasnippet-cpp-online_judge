@@ -1,9 +1,9 @@
 # -*- mode: snippet -*-
-# name: Binary Indexed Tree 2D (Fenwick Tree)
-# key: bit2d
+# name: Fenwick Tree 2D (Binary Indexed Tree)
+# key: fenw2d
 # --
 `(with-temp-buffer
    (insert-file-contents
      (expand-file-name "c++-mode/online_judge/binary_indexed_tree_2d.h" (car yas-snippet-dirs)))
    (buffer-string))`
-BIT2d<${1:int}> ${2:bit2d}(${3:n + 1}, ${4:m + 1});
+FenwickTree2d<${1:int}> ${2:fenw2d}(${3:n + 1}, ${4:m + 1});

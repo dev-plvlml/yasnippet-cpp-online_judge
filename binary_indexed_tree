@@ -1,9 +1,9 @@
 # -*- mode: snippet -*-
-# name: Binary Indexed Tree (Fenwick Tree)
-# key: bit
+# name: Fenwick Tree (Binary Indexed Tree)
+# key: fenw
 # --
 `(with-temp-buffer
    (insert-file-contents
      (expand-file-name "c++-mode/online_judge/binary_indexed_tree.h" (car yas-snippet-dirs)))
    (buffer-string))`
-BIT<${1:int}> ${2:bit}(${3:n + 1});
+FenwickTree<${1:int}> ${2:fenw}(${3:n + 1});

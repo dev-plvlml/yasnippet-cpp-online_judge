@@ -1,7 +1,7 @@
 template <typename T, class Function = plus<T>, class InvFunction = minus<T> >
-class BIT3d {
+class FenwickTree3d {
  public:
-  BIT3d(size_t i_size, size_t j_size, size_t k_size, T init = T())
+  FenwickTree3d(size_t i_size, size_t j_size, size_t k_size, T init = T())
       : tree_(i_size),
         init_(init) {
     for (auto& tree_i : tree_) {
@@ -12,8 +12,8 @@ class BIT3d {
     }
   }
   
-  BIT3d(const vector<vector<vector<T>>>& values, T init = T())
-      : BIT3d(values.size(), values[0].size(), values[0][0].size(), init) {
+  FenwickTree3d(const vector<vector<vector<T>>>& values, T init = T())
+      : FenwickTree3d(values.size(), values[0].size(), values[0][0].size(), init) {
     for (size_t i = 0; i < values.size(); ++i) {
       for (size_t j = 0; j < values[i].size(); ++j) {
         for (size_t k = 0; k < values[i][j].size(); ++k) {

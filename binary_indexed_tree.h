@@ -1,13 +1,13 @@
 template <typename T, class Function = plus<T>, class InvFunction = minus<T> >
-class BIT {
+class FenwickTree {
  public:
-  BIT(size_t size, T init = T())
+  FenwickTree(size_t size, T init = T())
       : tree_(size, init),
         init_(init)
   {}
   
-  BIT(const vector<T>& values, T init = T())
-      : BIT(values.size(), init) {
+  FenwickTree(const vector<T>& values, T init = T())
+      : FenwickTree(values.size(), init) {
     for (size_t i = 0; i < values.size(); ++i) {
       Assign(i, values[i]);
     }

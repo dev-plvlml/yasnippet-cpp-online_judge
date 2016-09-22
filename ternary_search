@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Ternary Search
+# key: tern
+# --
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/ternary_search.h" (car yas-snippet-dirs)))
+   (buffer-string))`

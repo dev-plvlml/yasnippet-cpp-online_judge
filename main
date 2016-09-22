@@ -43,6 +43,7 @@ using Pdd = pair<double, double>;
 constexpr double eps = 1.0e-9;
 const double pi = acos(-1.0);
 const double e = exp(1.0);
+const double phi = (1.0 + sqrt(5.0)) / 2.0;
 
 constexpr int k7 = 1000*1000*1000 + 7;
 constexpr int k9 = 1000*1000*1000 + 9;

@@ -1,3 +1,7 @@
+#include <numeric>
+#include <utility>
+#include <vector>
+
 class DSU {
  public:
   DSU(size_t size)
@@ -21,7 +25,7 @@ class DSU {
     size_t parent1 = FindSet(key1);
     size_t parent2 = FindSet(key2);
     if (parent1 == parent2) {
-      return { parent2, false };
+      return {parent2, false};
     } else {
       // Union by size:
       if (size_[parent1] > size_[parent2]) {
@@ -29,7 +33,7 @@ class DSU {
       }
       parent_[parent1] = parent2;
       size_[parent2] += size_[parent1];
-      return { parent2, true };
+      return {parent2, true};
     }
   }
 

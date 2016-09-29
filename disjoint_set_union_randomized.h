@@ -1,3 +1,8 @@
+#include <cstdlib>
+#include <numeric>
+#include <utility>
+#include <vector>
+
 class DSU {
  public:
   DSU(size_t size)
@@ -20,14 +25,14 @@ class DSU {
     size_t parent1 = FindSet(key1);
     size_t parent2 = FindSet(key2);
     if (parent1 == parent2) {
-      return { parent2, false };
+      return {parent2, false};
     } else {
       // Randomized union:
       if (rand() & 1) {
         swap(parent1, parent2);
       }
       parent_[parent1] = parent2;
-      return { parent2, true };
+      return {parent2, true};
     }
   }
 

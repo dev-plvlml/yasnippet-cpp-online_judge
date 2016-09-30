@@ -1,3 +1,5 @@
+#include <algorithm>
+
 template <typename T>
 T GCD(T a, T b) {
   while (a != 0 && b != 0) {
@@ -7,5 +9,5 @@ T GCD(T a, T b) {
       b -= a;
     }
   }
-  return max(a, b);
+  return std::max(a, b);
 }

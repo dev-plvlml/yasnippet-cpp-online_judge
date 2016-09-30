@@ -1,8 +1,11 @@
-template <typename T, class Function = plus<T> >
+#include <functional>
+#include <vector>
+
+template <typename T, class Function = std::plus<T>>
 class SegmentTree {
  public:
   template <typename U = T>
-  SegmentTree(const vector<U>& values)
+  SegmentTree(const std::vector<U>& values)
       : tree_(4 * values.size()),
         size_(values.size()) {
     Build(values, Root(), 0, size_);
@@ -34,7 +37,8 @@ class SegmentTree {
 
  private:
   template <class Visitor>
-  Visitor& Accept(size_t l, size_t r, Visitor& visitor, size_t v, size_t lv, size_t rv) const {
+  Visitor& Accept(size_t l, size_t r, Visitor& visitor,
+                  size_t v, size_t lv, size_t rv) const {
     if (l == lv && r == rv) {
       visitor(tree_[v]);
       return visitor;
@@ -86,6 +90,6 @@ class SegmentTree {
   }
 
  private:
-  vector<T> tree_;
+  std::vector<T> tree_;
   size_t size_;
 };

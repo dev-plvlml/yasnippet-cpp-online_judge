@@ -1,4 +1,7 @@
 template <typename T>
+T GCD(T a, T b);
+
+template <typename T>
 T LCM(T a, T b) {
   // According to a formula:
   // return (a * b) / GCD(a, b);

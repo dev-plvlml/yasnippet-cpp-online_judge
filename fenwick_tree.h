@@ -1,4 +1,7 @@
-template <typename T, class Function = plus<T>, class InvFunction = minus<T> >
+#include <functional>
+#include <vector>
+
+template <typename T, class Function = std::plus<T>, class InvFunction = std::minus<T>>
 class FenwickTree {
  public:
   FenwickTree(size_t size, T init = T())
@@ -6,7 +9,7 @@ class FenwickTree {
         init_(init)
   {}
   
-  FenwickTree(const vector<T>& values, T init = T())
+  FenwickTree(const std::vector<T>& values, T init = T())
       : FenwickTree(values.size(), init) {
     for (size_t i = 0; i < values.size(); ++i) {
       Assign(i, values[i]);
@@ -23,7 +26,7 @@ class FenwickTree {
 
   T Query(size_t last_incl) const {
     T result = init_;
-    for (int i = int(last_incl); i >= 0; i = F(i) - 1) {
+    for (int i = int{last_incl}; i >= 0; i = F(i) - 1) {
       result = Function()(result, tree_[i]);
     }
     return result;
@@ -46,6 +49,6 @@ class FenwickTree {
   static size_t H(size_t i) { return i | (i+1); }
   
  private:
-  vector<T> tree_;
+  std::vector<T> tree_;
   T init_;
 };

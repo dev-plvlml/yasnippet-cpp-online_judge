@@ -1,3 +1,8 @@
+#include <functional>
+
+extern const double eps;
+extern const double phi;
+
 template <class T, class Function, class Compare = std::less<T>>
 T GoldenSectionSearch(T x1, T x2, Function function, Compare compare = Compare()) {
   T xL = x1 + (x2 - x1) * (2 - phi);

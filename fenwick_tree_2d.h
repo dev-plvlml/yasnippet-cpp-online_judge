@@ -41,9 +41,9 @@ class FenwickTree2d {
 
   T Query(size_t i1, size_t i2, size_t j1, size_t j2) const {
     T result = Query(i2, j2);
-    if (i1) { result = InvFunction()(result, Query(i1 - 1, j2)); }
-    if (j1) { result = InvFunction()(result, Query(i2, j1 - 1)); }
-    if (i1 && j1) { result = Function()(result, Query(i1 - 1, j1 - 1)); }
+    if (i1) result = InvFunction()(result, Query(i1 - 1, j2));
+    if (j1) result = InvFunction()(result, Query(i2, j1 - 1));
+    if (i1 && j1) result = Function()(result, Query(i1 - 1, j1 - 1));
     return result;
   }
 

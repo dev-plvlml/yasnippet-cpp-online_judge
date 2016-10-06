@@ -34,7 +34,9 @@ class FenwickTree {
 
   T Query(size_t first, size_t last_incl) const {
     T result = Query(last_incl);
-    if (first) { result = InvFunction()(result, Query(first - 1)); }
+    if (first) {
+      result = InvFunction()(result, Query(first - 1));
+    }
     return result;
   }
 

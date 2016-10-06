@@ -34,18 +34,21 @@ class SegmentTree {
   static size_t Left(size_t i) { return 2*i + 1; }
   static size_t Right(size_t i) { return 2*i + 2; }
   static size_t Parent(size_t i) { return (i-1) / 2; }
+  static size_t Middle(size_t l, size_t r) {
+    // Naive approach:
+    // return (l + r) / 2;
+    // Reducing integer overflow:
+    return l + (r - l) / 2;
+  }
 
  private:
   template <class Visitor>
   Visitor& Accept(size_t l, size_t r, Visitor& visitor,
                   size_t v, size_t lv, size_t rv) const {
-    if (l == lv && r == rv) {
-      visitor(tree_[v]);
-      return visitor;
-    }
-    size_t mv = (lv + rv) / 2;
-    if (r <= mv) { return Accept(l, r, visitor, Left(v), lv, mv); }
-    if (l >= mv) { return Accept(l, r, visitor, Right(v), mv, rv); }
+    if (l == lv && r == rv) return visitor(tree_[v]);
+    size_t mv = Middle(lv, rv);
+    if (r <= mv) return Accept(l, r, visitor, Left(v), lv, mv);
+    if (l >= mv) return Accept(l, r, visitor, Right(v), mv, rv);
     Accept(l, mv, visitor, Left(v), lv, mv);
     Accept(mv, r, visitor, Right(v), mv, rv);
     return visitor;
@@ -53,11 +56,8 @@ class SegmentTree {
 
   template <typename U = T>
   void Assign(size_t pos, U value, size_t v, size_t lv, size_t rv) {
-    if (rv - lv == 1) {
-      tree_[v] = value;
-      return;
-    }
-    size_t mv = (lv + rv) / 2;
+    if (rv - lv == 1) return (void) tree_[v] = value;
+    size_t mv = Middle(lv, rv);
     if (pos < mv) {
       Assign(pos, value, Left(v), lv, mv);
     } else {
@@ -67,24 +67,19 @@ class SegmentTree {
   }
 
   template <typename U = T>
-  void Build(const vector<U>& values, size_t v, size_t lv, size_t rv) {
-    if (rv - lv == 1) {
-      tree_[v] = values[lv];
-      return;
-    }
-    size_t mv = (lv + rv) / 2;
+  void Build(const std::vector<U>& values, size_t v, size_t lv, size_t rv) {
+    if (rv - lv == 1) return (void) tree_[v] = values[lv];
+    size_t mv = Middle(lv, rv);
     Build(values, Left(v), lv, mv);
     Build(values, Right(v), mv, rv);
     tree_[v] = Function()(tree_[Left(v)], tree_[Right(v)]);
   }
 
   T Query(size_t l, size_t r, size_t v, size_t lv, size_t rv) const {
-    if (l == lv && r == rv) {
-      return tree_[v];
-    }
-    size_t mv = (lv + rv) / 2;
-    if (r <= mv) { return Query(l, r, Left(v), lv, mv); }
-    if (l >= mv) { return Query(l, r, Right(v), mv, rv); }
+    if (l == lv && r == rv) return tree_[v];
+    size_t mv = Middle(lv, rv);
+    if (r <= mv) return Query(l, r, Left(v), lv, mv);
+    if (l >= mv) return Query(l, r, Right(v), mv, rv);
     return Function()(Query(l, mv, Left(v), lv, mv),
                       Query(mv, r, Right(v), mv, rv));
   }

@@ -1,9 +1,8 @@
 #include <functional>
 
-extern const double eps;
-
 template <class T, class Function, class Compare = std::less<T>>
 T TernarySearch(T x1, T x2, Function function, Compare compare = Compare()) {
+  constexpr T eps = 1.0e-9;
   while (x2 - x1 >= eps) {
     T dx = (x2 - x1) / 3;
     T xL = x1 + dx;

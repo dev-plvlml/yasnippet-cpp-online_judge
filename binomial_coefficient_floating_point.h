@@ -1,8 +1,7 @@
 template <typename T, typename FP = double>
 T Comb(T n0, T k0) {
   FP eps = 0.005;
-  if (k0 > n0)
-    return 0;
+  if (k0 > n0) return 0;
   if (k0 > n0 - k0) {
     k0 = n0 - k0;
   }

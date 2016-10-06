@@ -1,7 +1,6 @@
 template <typename T>
 T Comb(T n, T k) {
-  if (k > n)
-    return 0;
+  if (k > n) return 0;
   if (k > n - k) {
     k = n - k;
   }

@@ -4,5 +4,5 @@
 # --
 `(with-temp-buffer
    (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/greatest_common_divisor_by_modulo.h" (car yas-snippet-dirs)))
+     (expand-file-name "c++-mode/online_judge/greatest_common_divisor_by_division.h" (car yas-snippet-dirs)))
    (buffer-string))`

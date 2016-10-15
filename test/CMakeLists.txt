@@ -8,13 +8,13 @@ set(SOURCES
     binomial_coefficient_integer_test.cc
     disjoint_set_union_by_size_test.cc
     disjoint_set_union_randomized_test.cc
+    fenwick_tree_test.cc
     fenwick_tree_2d_test.cc
     fenwick_tree_3d_test.cc
-    fenwick_tree_test.cc
     golden_section_search_test.cc
-    greatest_common_divisor_by_modulo_recursive_test.cc
-    greatest_common_divisor_by_modulo_test.cc
-    greatest_common_divisor_euclidean_test.cc
+    greatest_common_divisor_by_division_test.cc
+    greatest_common_divisor_by_division_recursive_test.cc
+    greatest_common_divisor_by_subtraction_test.cc
     knuth_morris_pratt_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
@@ -31,9 +31,9 @@ set(HEADERS
     ../fenwick_tree_2d.h
     ../fenwick_tree_3d.h
     ../golden_section_search.h
-    ../greatest_common_divisor_by_modulo.h
-    ../greatest_common_divisor_by_modulo_recursive.h
-    ../greatest_common_divisor_euclidean.h
+    ../greatest_common_divisor_by_division.h
+    ../greatest_common_divisor_by_division_recursive.h
+    ../greatest_common_divisor_by_subtraction.h
     ../knuth_morris_pratt.h
     ../least_common_multiplier.h
     ../modular_arithmetics.h

@@ -23,6 +23,7 @@ set(SOURCES
     )
 
 set(HEADERS
+    minmax_lazy_propagation.h
     ../binomial_coefficient_floating_point.h
     ../binomial_coefficient_integer.h
     ../disjoint_set_union_by_size.h

@@ -6,8 +6,8 @@
 class DSU {
  public:
   DSU(size_t size);
-  size_t FindSet(size_t key);
-  size_t SetUnion(size_t key1, size_t key2);
+  size_t FindSet(size_t id);
+  size_t UniteSets(size_t id1, size_t id2);
 
  private:
   std::vector<size_t> parent_;
@@ -18,28 +18,25 @@ inline DSU::DSU(size_t size)
   std::iota(parent_.begin(), parent_.end(), 0);
 }
 
-inline size_t DSU::FindSet(size_t key) {
-  if (parent_[key] == key) {
-    return parent_[key];
-  } else {
+inline size_t DSU::FindSet(size_t id) {
+  if (parent_[id] != id) {
     // Naive approach:
-    // return FindSet(parent_[key]); 
-    // With path compression:
-    return parent_[key] = FindSet(parent_[key]);
+    // return FindSet(parent_[id]);
+    // Path compression:
+    parent_[id] = FindSet(parent_[id]);
   }
+  return parent_[id];
 }
 
-inline size_t DSU::SetUnion(size_t key1, size_t key2) {
-  size_t parent1 = FindSet(key1);
-  size_t parent2 = FindSet(key2);
-  if (parent1 == parent2) {
-    return parent1;
-  } else {
+inline size_t DSU::UniteSets(size_t id1, size_t id2) {
+  size_t parent1 = FindSet(id1);
+  size_t parent2 = FindSet(id2);
+  if (parent1 != parent2) {
     // Randomized union:
     if (rand() & 1) {
       std::swap(parent1, parent2);
     }
     parent_[parent2] = parent1;
-    return parent1;
   }
+  return parent1;
 }

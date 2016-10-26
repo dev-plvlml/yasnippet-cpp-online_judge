@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Treap With Implicit Key
+# key: treap
+# --
+`(with-temp-buffer
+   (insert-file-contents
+     (expand-file-name "c++-mode/online_judge/treap_with_implicit_key.h" (car yas-snippet-dirs)))
+   (buffer-string))`

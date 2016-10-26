@@ -20,10 +20,13 @@ set(SOURCES
     modular_arithmetics_test.cc
     segment_tree_test.cc
     ternary_search_test.cc
+    treap_with_implicit_key_test.cc
     )
 
 set(HEADERS
-    minmax_lazy_propagation.h
+    segment_tree_minmax.h
+    treap_with_implicit_key_sum.h
+    treap_with_implicit_key_minmax.h
     ../binomial_coefficient_floating_point.h
     ../binomial_coefficient_integer.h
     ../disjoint_set_union_by_size.h
@@ -40,6 +43,7 @@ set(HEADERS
     ../modular_arithmetics.h
     ../segment_tree.h
     ../ternary_search.h
+    ../treap_with_implicit_key.h
     )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

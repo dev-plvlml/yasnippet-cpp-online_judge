@@ -51,11 +51,11 @@ TEST(GreatestCommonDivisorByModuloRecursive, HandlesArbitrary) {
   EXPECT_EQ(6, recursive::GCD(30, 42));
 }
 
-//TEST(GreatestCommonDivisorByModuloRecursive, HandlesNegative) {
-//  EXPECT_EQ(1, recursive::GCD(-2, -3));
-//  EXPECT_EQ(1, recursive::GCD(-3, -2));
-//  EXPECT_EQ(7, recursive::GCD(-42, -35));
-//  EXPECT_EQ(7, recursive::GCD(-35, -42));
-//  EXPECT_EQ(6, recursive::GCD(-42, -30));
-//  EXPECT_EQ(6, recursive::GCD(-30, -42));
-//}
+TEST(GreatestCommonDivisorByModuloRecursive, DISABLED_HandlesNegative) {
+  EXPECT_EQ(1, recursive::GCD(-2, -3));
+  EXPECT_EQ(1, recursive::GCD(-3, -2));
+  EXPECT_EQ(7, recursive::GCD(-42, -35));
+  EXPECT_EQ(7, recursive::GCD(-35, -42));
+  EXPECT_EQ(6, recursive::GCD(-42, -30));
+  EXPECT_EQ(6, recursive::GCD(-30, -42));
+}

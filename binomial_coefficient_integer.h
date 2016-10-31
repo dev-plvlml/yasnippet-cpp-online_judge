@@ -1,3 +1,6 @@
+#ifndef BINOMIAL_COEFFICIENT_INTEGER_H_
+#define BINOMIAL_COEFFICIENT_INTEGER_H_
+
 template <typename T>
 T Comb(T n, T k) {
   if (k > n) return 0;
@@ -13,3 +16,5 @@ T Comb(T n, T k) {
   }
   return result;
 }
+
+#endif  // BINOMIAL_COEFFICIENT_INTEGER_H_

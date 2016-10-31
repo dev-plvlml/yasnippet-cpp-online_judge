@@ -1,3 +1,7 @@
+#ifndef DISJOINT_SET_UNION_BY_SIZE_H_
+#define DISJOINT_SET_UNION_BY_SIZE_H_
+
+#include <cstddef>
 #include <numeric>
 #include <utility>
 #include <vector>
@@ -42,3 +46,5 @@ inline size_t DSU::UniteSets(size_t id1, size_t id2) {
   }
   return parent1;
 }
+
+#endif  // DISJOINT_SET_UNION_BY_SIZE_H_

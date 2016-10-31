@@ -1,3 +1,6 @@
+#ifndef BINOMIAL_COEFFICIENT_FLOATING_POINT_H_
+#define BINOMIAL_COEFFICIENT_FLOATING_POINT_H_
+
 template <typename T, typename FP = double>
 T Comb(T n0, T k0) {
   FP eps = 0.005;
@@ -11,3 +14,5 @@ T Comb(T n0, T k0) {
   }
   return result + eps;
 }
+
+#endif  // BINOMIAL_COEFFICIENT_FLOATING_POINT_H_

@@ -1,3 +1,6 @@
+#ifndef GOLDEN_SECTION_SEARCH_H_
+#define GOLDEN_SECTION_SEARCH_H_
+
 #include <cmath>
 #include <functional>
 
@@ -22,3 +25,5 @@ T GoldenSectionSearch(T x1, T x2, Function function, Compare compare = Compare()
   }
   return (x1 + x2) / 2;
 }
+
+#endif  // GOLDEN_SECTION_SEARCH_H_

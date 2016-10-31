@@ -1,4 +1,8 @@
+#ifndef SEGMENT_TREE_H_
+#define SEGMENT_TREE_H_
+
 #include <algorithm>
+#include <cstddef>
 #include <functional>
 #include <vector>
 
@@ -8,7 +12,7 @@ struct NullPropagator {
 };
 
 template <typename T, class Function = std::plus<T>,
-    class LazyPropagation = NullPropagator<T>>
+          class LazyPropagation = NullPropagator<T>>
 class SegmentTree {
  public:
   template <typename U = T>
@@ -119,3 +123,5 @@ class SegmentTree {
   std::vector<T> data_;
   const size_t size_;
 };
+
+#endif  // SEGMENT_TREE_H_

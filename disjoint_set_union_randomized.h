@@ -1,3 +1,6 @@
+#ifndef DISJOINT_SET_UNION_RANDOMIZED_H_
+#define DISJOINT_SET_UNION_RANDOMIZED_H_
+
 #include <cstdlib>
 #include <numeric>
 #include <utility>
@@ -40,3 +43,5 @@ inline size_t DSU::UniteSets(size_t id1, size_t id2) {
   }
   return parent1;
 }
+
+#endif  // DISJOINT_SET_UNION_RANDOMIZED_H_

@@ -1,3 +1,6 @@
+#ifndef GREATEST_COMMON_DIVISOR_BY_SUBTRACTION_H_
+#define GREATEST_COMMON_DIVISOR_BY_SUBTRACTION_H_
+
 #include <algorithm>
 #include <cstdlib>
 
@@ -14,3 +17,5 @@ T GCD(T a, T b) {
   }
   return std::max(a, b);
 }
+
+#endif  // GREATEST_COMMON_DIVISOR_BY_SUBTRACTION_H_

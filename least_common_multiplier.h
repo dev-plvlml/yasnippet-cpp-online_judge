@@ -1,3 +1,6 @@
+#ifndef LEAST_COMMON_MULTIPLIER_H_
+#define LEAST_COMMON_MULTIPLIER_H_
+
 #include <cstdlib>
 
 template <typename T>
@@ -12,3 +15,5 @@ T LCM(T a, T b) {
   // Reducing integer overflow:
   return a / GCD(a, b) * b;
 }
+
+#endif  // LEAST_COMMON_MULTIPLIER_H_

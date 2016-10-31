@@ -1,3 +1,7 @@
+#ifndef FENWICK_TREE_3D_H_
+#define FENWICK_TREE_3D_H_
+
+#include <cstddef>
 #include <functional>
 #include <vector>
 
@@ -76,3 +80,5 @@ class FenwickTree3d {
   std::vector<std::vector<std::vector<T>>> data_;
   T init_;
 };
+
+#endif  // FENWICK_TREE_3D_H_

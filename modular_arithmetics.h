@@ -1,3 +1,6 @@
+#ifndef MODULAR_ARITHMETICS_H_
+#define MODULAR_ARITHMETICS_H_
+
 template <typename T>
 T PlusMod(T a, T b, T m) {
   a %= m;
@@ -37,3 +40,5 @@ T PowerMod(T a, T n, T m) {
   }
   return power;
 }
+
+#endif  // MODULAR_ARITHMETICS_H_

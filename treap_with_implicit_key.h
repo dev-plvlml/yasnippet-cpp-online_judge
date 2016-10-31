@@ -1,12 +1,15 @@
+#ifndef TREAP_WITH_IMPLICIT_KEY_H_
+#define TREAP_WITH_IMPLICIT_KEY_H_
+
 #include <cstdlib>
 #include <memory>
 #include <tuple>
-#include <type_traits>
 #include <utility>
+#include <vector>
 
 template <typename T>
 struct NullMaintainer {
-  void operator()(T& root, T* left, T* right) {}
+  void operator()(T& root, const T* left, const T* right) {}
 };
 
 template <typename T>
@@ -15,14 +18,15 @@ struct NullPropagator {
 };
 
 template <typename T,
-    class Maintain = NullMaintainer<T>,
-    class LazyPropagation = NullPropagator<T>>
+          class Maintain = NullMaintainer<T>,
+          class LazyPropagation = NullPropagator<T>>
 class Treap {
  public:
   Treap() = default;
 
   template <typename U>
   Treap(const std::vector<U>& values) {
+    // TODO: implement Treap(vector<U>) in O(N)
     for (size_t i = 0; i < values.size(); ++i) {
       Insert(i, values[i]);
     }
@@ -62,6 +66,12 @@ class Treap {
     return result;
   }
 
+  void Rotate(size_t pos) {
+    Node *left, *right;
+    std::tie(left, right) = Split(root_, pos);
+    root_ = Merge(right, left);
+  }
+
   template <typename U = T>
   void Set(size_t pos, U value) {
     Update(pos, 1, value);
@@ -75,6 +85,8 @@ class Treap {
     nodes->data = metadata;
     root_ = Merge(Merge(left, nodes), right);
   }
+
+  size_t Size() const { return Size(root_); }
 
   template <class Visitor>
   Visitor& PreorderTraversal(Visitor& visitor) {
@@ -91,7 +103,7 @@ class Treap {
     return PostorderTraversal(root_, visitor);
   }
 
-#ifndef EXPOSE_NODES
+#ifndef INTRUSIVE
  private:
 #else
  public:
@@ -125,20 +137,20 @@ class Treap {
   static Visitor& PostorderTraversal(Node* root, Visitor& visitor);
 
  private:
-  static void Push(Node& v) {
-#ifndef EXPOSE_NODES
-    LazyPropagation()(v.data, Data(v.left), Data(v.right));
+  static void Push(Node* v) {
+#ifndef INTRUSIVE
+    LazyPropagation()(v->data, Data(v->left), Data(v->right));
 #else
-    LazyPropagation()(v, v.left, v.right);
+    LazyPropagation()(v, v->left, v->right);
 #endif
   }
 
-  static void Update(Node& v) {
-    v.size = 1 + Size(v.left) + Size(v.right);
-#ifndef EXPOSE_NODES
-    Maintain()(v.data, Data(v.left), Data(v.right));
+  static void Recalc(Node* v) {
+    v->size = 1 + Size(v->left) + Size(v->right);
+#ifndef INTRUSIVE
+    Maintain()(v->data, Data(v->left), Data(v->right));
 #else
-    Maintain()(v, v.left, v.right);
+    Maintain()(v, v->left, v->right);
 #endif
   }
 
@@ -152,8 +164,8 @@ class Treap {
 
 template <typename T, class Mn, class LPn>
 auto Treap<T, Mn, LPn>::Merge(Node* left, Node* right) -> Node* {
-  if (left) Push(*left);
-  if (right) Push(*right);
+  if (left) Push(left);
+  if (right) Push(right);
   if (!left)
     return right;
   if (!right)
@@ -166,7 +178,7 @@ auto Treap<T, Mn, LPn>::Merge(Node* left, Node* right) -> Node* {
     root = right;
     root->left = Merge(left, root->left);
   }
-  Update(*root);
+  Recalc(root);
   return root;
 }
 
@@ -174,23 +186,24 @@ template <typename T, class Mn, class LPn>
 auto Treap<T, Mn, LPn>::Split(Node* root, size_t id) -> std::pair<Node*, Node*> {
   if (!root)
     return {nullptr, nullptr};
-  Push(*root);
+  Push(root);
   Node *left, *right;
   size_t root_id = Size(root->left);
-  if (id > root_id) {
+  if (root_id < id) {
     std::tie(left, right) = Split(root->right, id - (root_id + 1));
     root->right = left;
-    Update(*root);
+    Recalc(root);
     return {root, right};
   } else {
     std::tie(left, right) = Split(root->left, id);
     root->left = right;
-    Update(*root);
+    Recalc(root);
     return {left, root};
   }
 }
 
-template <typename T, class Mn, class LPn> template <class Visitor>
+template <typename T, class Mn, class LPn>
+template <class Visitor>
 Visitor& Treap<T, Mn, LPn>::PreorderTraversal(Node* root, Visitor& visitor) {
   if (!root)
     return visitor;
@@ -200,7 +213,8 @@ Visitor& Treap<T, Mn, LPn>::PreorderTraversal(Node* root, Visitor& visitor) {
   return visitor;
 }
 
-template <typename T, class Mn, class LPn> template <class Visitor>
+template <typename T, class Mn, class LPn>
+template <class Visitor>
 Visitor& Treap<T, Mn, LPn>::InorderTraversal(Node* root, Visitor& visitor) {
   if (!root)
     return visitor;
@@ -210,7 +224,8 @@ Visitor& Treap<T, Mn, LPn>::InorderTraversal(Node* root, Visitor& visitor) {
   return visitor;
 }
 
-template <typename T, class Mn, class LPn> template <class Visitor>
+template <typename T, class Mn, class LPn>
+template <class Visitor>
 Visitor& Treap<T, Mn, LPn>::PostorderTraversal(Node* root, Visitor& visitor) {
   if (!root)
     return visitor;
@@ -219,3 +234,5 @@ Visitor& Treap<T, Mn, LPn>::PostorderTraversal(Node* root, Visitor& visitor) {
   PostorderTraversal(root->right, visitor);
   return visitor;
 }
+
+#endif  // TREAP_WITH_IMPLICIT_KEY_H_

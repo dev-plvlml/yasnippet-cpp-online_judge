@@ -1,3 +1,6 @@
+#ifndef TERNARY_SEARCH_H_
+#define TERNARY_SEARCH_H_
+
 #include <functional>
 
 template <class T, class Function, class Compare = std::less<T>>
@@ -17,3 +20,5 @@ T TernarySearch(T x1, T x2, Function function, Compare compare = Compare()) {
   }
   return (x1 + x2) / 2;
 }
+
+#endif  // TERNARY_SEARCH_H_

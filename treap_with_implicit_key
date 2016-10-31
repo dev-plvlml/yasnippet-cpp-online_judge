@@ -2,4 +2,4 @@
 # name: Treap With Implicit Key
 # key: treapw
 # --
-`(insert-header-file-contents "c++-mode/online_judge/treap_with_implicit_key.h")`
+`(insert-header-file-contents "treap_with_implicit_key.h")`

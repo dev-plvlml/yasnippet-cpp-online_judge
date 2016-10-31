@@ -2,4 +2,4 @@
 # name: Modular Arithmetics
 # key: mod
 # --
-`(insert-header-file-contents "c++-mode/online_judge/modular_arithmetics.h")`
+`(insert-header-file-contents "modular_arithmetics.h")`

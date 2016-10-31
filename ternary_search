@@ -2,4 +2,4 @@
 # name: Ternary Search
 # key: tern
 # --
-`(insert-header-file-contents "c++-mode/online_judge/ternary_search.h")`
+`(insert-header-file-contents "ternary_search.h")`

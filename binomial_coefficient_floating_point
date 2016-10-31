@@ -2,4 +2,4 @@
 # name: Binomial Coefficient (floating point)
 # key: comb
 # --
-`(insert-header-file-contents "c++-mode/online_judge/binomial_coefficient_floating_point.h")`
+`(insert-header-file-contents "binomial_coefficient_floating_point.h")`

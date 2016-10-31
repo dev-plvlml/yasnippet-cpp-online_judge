@@ -2,5 +2,5 @@
 # name: Disjoint Set Union (randomized)
 # key: dsu
 # --
-`(insert-header-file-contents "c++-mode/online_judge/disjoint_set_union_randomized.h")`
+`(insert-header-file-contents "disjoint_set_union_randomized.h")`
 DSU ${1:dsu}(${2:n + 1});

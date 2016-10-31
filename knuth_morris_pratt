@@ -2,4 +2,4 @@
 # name: Knuth-Morris-Pratt
 # key: kmp
 # --
-`(insert-header-file-contents "c++-mode/online_judge/knuth_morris_pratt.h")`
+`(insert-header-file-contents "knuth_morris_pratt.h")`

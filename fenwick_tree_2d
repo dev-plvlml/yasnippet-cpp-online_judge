@@ -2,5 +2,5 @@
 # name: Fenwick Tree 2D (Binary Indexed Tree)
 # key: fenw2d
 # --
-`(insert-header-file-contents "c++-mode/online_judge/fenwick_tree_2d.h")`
+`(insert-header-file-contents "fenwick_tree_2d.h")`
 FenwickTree2d<${1:int}> ${2:fenw2d}(${3:n + 1}, ${4:m + 1});

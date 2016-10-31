@@ -2,7 +2,4 @@
 # name: Modular Arithmetics
 # key: mod
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/modular_arithmetics.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/modular_arithmetics.h")`

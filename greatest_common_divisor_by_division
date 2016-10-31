@@ -2,7 +2,4 @@
 # name: Greatest Common Divisor (by modulo)
 # key: gcd
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/greatest_common_divisor_by_division.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/greatest_common_divisor_by_division.h")`

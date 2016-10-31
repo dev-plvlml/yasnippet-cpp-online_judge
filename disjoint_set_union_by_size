@@ -2,8 +2,5 @@
 # name: Disjoint Set Union (by size)
 # key: dsu
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/disjoint_set_union_by_size.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/disjoint_set_union_by_size.h")`
 DSU ${1:dsu}(${2:n + 1});

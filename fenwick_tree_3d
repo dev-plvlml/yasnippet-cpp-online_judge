@@ -2,8 +2,5 @@
 # name: Fenwick Tree 3D (Binary Indexed Tree)
 # key: fenw3d
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/binary_indexed_tree_3d.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/fenwick_tree_3d.h")`
 FenwickTree3d<${1:int}> ${2:fenw3d}(${3:n + 1}, ${4:m + 1}, ${5:l + 1});

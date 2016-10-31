@@ -2,7 +2,4 @@
 # name: Binomial Coefficient (floating point)
 # key: comb
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/binomial_coefficient_floating_point.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/binomial_coefficient_floating_point.h")`

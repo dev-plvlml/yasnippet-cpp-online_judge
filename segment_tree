@@ -2,8 +2,5 @@
 # name: Segment Tree
 # key: segm
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/segment_tree.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/segment_tree.h")`
 SegmentTree<${1:int}> ${2:segm}(${3:n + 1});

@@ -2,7 +2,4 @@
 # name: Golden Section Search
 # key: gold
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/golden_section_search.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/golden_section_search.h")`

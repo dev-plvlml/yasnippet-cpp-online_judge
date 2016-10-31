@@ -2,7 +2,4 @@
 # name: Knuth-Morris-Pratt
 # key: kmp
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/knuth_morris_pratt.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/knuth_morris_pratt.h")`

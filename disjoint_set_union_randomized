@@ -2,8 +2,5 @@
 # name: Disjoint Set Union (randomized)
 # key: dsu
 # --
-`(with-temp-buffer
-   (insert-file-contents
-     (expand-file-name "c++-mode/online_judge/disjoint_set_union_randomized.h" (car yas-snippet-dirs)))
-   (buffer-string))`
+`(insert-header-file-contents "c++-mode/online_judge/disjoint_set_union_randomized.h")`
 DSU ${1:dsu}(${2:n + 1});

@@ -7,7 +7,7 @@ T PlusMod(T a, T b, T m) {
   b %= m;
   // Naive approach:
   // return (a + b) % m;
-  // Reducing integer overflow:
+  // Reducing integer overflow risks:
   T sum = a - m + b;
   return sum < 0 ? sum + m : sum;
 }

@@ -21,38 +21,13 @@ using namespace __gnu_cxx;
 #include <ext/pb_ds/trie_policy.hpp>
 using namespace __gnu_pbds;
 
-#else
-
-#include <cmath>
-#include <cstdio>
-#include <iostream>
-#include <limits>
-#include <utility>
-using namespace std;
-
 #endif
 
-#define X first
-#define Y second
-#define MP(X, Y) make_pair((X), (Y))
-#define ALL(C) begin(C), end(C)
+`(insert-header-file-contents "main.h")`
 
-using LL = long long;
-using Pii = pair<int, int>;
-using Pdd = pair<double, double>;
-
-constexpr double eps = 1.0e-9;
-const double pi = acos(-1.0);
-const double e = exp(1.0);
-const double phi = (1.0 + sqrt(5.0)) / 2.0;
-
-constexpr int k7 = 1000*1000*1000 + 7;
-constexpr int k9 = 1000*1000*1000 + 9;
-constexpr int inf = numeric_limits<int>::max();
-
-constexpr char eol = '\n';
-
-
+#include <cstdio>
+#include <iostream>
+using namespace std;
 
 int main(int argc, char* argv[]) {
 #ifndef ONLINE_JUDGE

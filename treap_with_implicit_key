@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: Treap With Implicit Key
-# key: treapw
+# key: treap
 # --
 `(insert-header-file-contents "treap_with_implicit_key.h")`

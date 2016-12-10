@@ -3,19 +3,16 @@
 
 #include <cstdlib>
 #include <memory>
+#include <stack>
 #include <tuple>
 #include <utility>
 #include <vector>
 
 template <typename T>
-struct NullMaintainer {
-  void operator()(T& root, const T* left, const T* right) {}
-};
+struct NullMaintainer;
 
 template <typename T>
-struct NullPropagator {
-  void operator()(T& root, T* left, T* right) {}
-};
+struct NullPropagator;
 
 template <typename T,
           class Maintain = NullMaintainer<T>,
@@ -24,11 +21,17 @@ class Treap {
  public:
   Treap() = default;
 
-  template <typename U>
-  Treap(const std::vector<U>& values) {
-    // TODO: implement Treap(vector<U>) in O(N)
-    for (size_t i = 0; i < values.size(); ++i) {
-      Insert(i, values[i]);
+  template <typename It = T*>
+  Treap(It first, It last) {
+    std::stack<Node*> stack;
+    for (It it = first; it != last; ++it) {
+      Node *node = new Node(*it);
+      while (!stack.empty() && stack.top()->priority < node->priority) {
+        node->left = stack.top();
+        stack.pop();
+      }
+      (stack.empty() ? root_ : stack.top()->right) = node;
+      stack.push(node);
     }
   }
 
@@ -112,7 +115,7 @@ class Treap {
     template <typename U = T>
     Node(U value):
         data(value),
-        priority(rand())
+        priority(std::rand())
     {}
 
     Node *left = nullptr;
@@ -137,6 +140,9 @@ class Treap {
   static Visitor& PostorderTraversal(Node* root, Visitor& visitor);
 
  private:
+  static size_t Size(Node* v) { return v ? v->size : 0; }
+  static T* Data(Node* v) { return v ? &v->data : nullptr; }
+  
   static void Push(Node* v) {
 #ifndef INTRUSIVE
     LazyPropagation()(v->data, Data(v->left), Data(v->right));
@@ -155,11 +161,29 @@ class Treap {
   }
 
  private:
-  static size_t Size(Node* v) { return v ? v->size : 0; }
-  static T* Data(Node* v) { return v ? &v->data : nullptr; }
-
- private:
   Node* root_ = nullptr;
+};
+
+template <typename T>
+struct NullMaintainer {
+#ifndef INTRUSIVE
+  using Data = T;
+  void operator()(Data& root, const Data* left, const Data* right) {}
+#else
+  using Node = T;
+  void operator()(Node* root, const Node* left, const Node* right) {}
+#endif
+};
+
+template <typename T>
+struct NullPropagator {
+#ifndef INTRUSIVE
+  using Data = T;
+  void operator()(Data& root, const Data* left, const Data* right) {}
+#else
+  using Node = T;
+  void operator()(Node* root, const Node* left, const Node* right) {}
+#endif
 };
 
 template <typename T, class Mn, class LPn>

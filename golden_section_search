@@ -2,4 +2,4 @@
 # name: Golden Section Search
 # key: gold
 # --
-`(insert-header-file-contents "c++-mode/online_judge/golden_section_search.h")`
+`(insert-header-file-contents "golden_section_search.h")`

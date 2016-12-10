@@ -2,9 +2,7 @@
 #define LEAST_COMMON_MULTIPLIER_H_
 
 #include <cstdlib>
-
-template <typename T>
-T GCD(T a, T b);
+#include "greatest_common_divisor_by_division.h"
 
 template <typename T>
 T LCM(T a, T b) {
@@ -12,7 +10,7 @@ T LCM(T a, T b) {
   b = abs(b);
   // According to a formula:
   // return (a * b) / GCD(a, b);
-  // Reducing integer overflow:
+  // Reducing integer overflow risks:
   return a / GCD(a, b) * b;
 }
 

@@ -2,5 +2,4 @@
 # name: Least Common Multiplier
 # key: lcm
 # --
-`(insert-header-file-contents "greatest_common_divisor_by_division.h")`
 `(insert-header-file-contents "least_common_multiplier.h")`

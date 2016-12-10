@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: Greatest Common Divisor (by modulo)
+# name: Greatest Common Divisor (by division)
 # key: gcd
 # --
-`(insert-header-file-contents "c++-mode/online_judge/greatest_common_divisor_by_division.h")`
+`(insert-header-file-contents "greatest_common_divisor_by_division.h")`

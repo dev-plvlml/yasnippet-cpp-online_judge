@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Graham's Scan (convex hull)
+# key: graham
+# --
+`(insert-header-file-contents "convex_hull_grahams_scan.h")`

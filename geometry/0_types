@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Basic types
+# key: geom
+# --
+`(insert-header-file-contents "geometry/0_types.h")`

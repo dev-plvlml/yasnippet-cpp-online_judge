@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Chan's Algorithm (convex hull)
+# key: chan
+# --
+`(insert-header-file-contents "convex_hull_chans_algorithm.h")`

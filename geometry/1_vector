@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Vector
+# key: geomv
+# --
+`(insert-header-file-contents "geometry/1_vector.h")`

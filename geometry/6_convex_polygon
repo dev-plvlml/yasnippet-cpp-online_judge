@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Convex polygon
+# key: geomcp
+# --
+`(insert-header-file-contents "geometry/6_convex_polygon.h")`

@@ -6,11 +6,15 @@ enable_testing()
 set(SOURCES
     binomial_coefficient_floating_point_test.cc
     binomial_coefficient_integer_test.cc
+    convex_hull_chans_algorithm_test.cc
+    convex_hull_grahams_scan_test.cc
+    convex_hull_jarvis_march_test.cc
     disjoint_set_union_by_size_test.cc
     disjoint_set_union_randomized_test.cc
     fenwick_tree_test.cc
     fenwick_tree_2d_test.cc
     fenwick_tree_3d_test.cc
+    geometry/geometry_test.cc
     golden_section_search_test.cc
     greatest_common_divisor_by_division_test.cc
     greatest_common_divisor_by_division_recursive_test.cc
@@ -29,11 +33,21 @@ set(HEADERS
     treap_with_implicit_key_minmax.h
     ../binomial_coefficient_floating_point.h
     ../binomial_coefficient_integer.h
+    ../convex_hull_chans_algorithm_test.h
+    ../convex_hull_grahams_scan.h
+    ../convex_hull_jarvis_march_test.h
     ../disjoint_set_union_by_size.h
     ../disjoint_set_union_randomized.h
     ../fenwick_tree.h
     ../fenwick_tree_2d.h
     ../fenwick_tree_3d.h
+    ../geometry/0_types.h
+    ../geometry/1_vector.h
+    ../geometry/2_point.h
+    ../geometry/3_line.h
+    ../geometry/4_segment.h
+    ../geometry/5_polygon.h
+    ../geometry/6_convex_polygon.h
     ../golden_section_search.h
     ../greatest_common_divisor_by_division.h
     ../greatest_common_divisor_by_division_recursive.h

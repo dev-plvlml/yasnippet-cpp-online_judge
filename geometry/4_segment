@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Segment
+# key: geoms
+# --
+`(insert-header-file-contents "geometry/4_segment.h")`

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Point
+# key: geompt
+# --
+`(insert-header-file-contents "geometry/2_point.h")`

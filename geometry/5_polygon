@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Simple polygon
+# key: geomp
+# --
+`(insert-header-file-contents "geometry/5_polygon.h")`

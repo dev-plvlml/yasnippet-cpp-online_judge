@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Geometry: Line
+# key: geoml
+# --
+`(insert-header-file-contents "geometry/3_line.h")`

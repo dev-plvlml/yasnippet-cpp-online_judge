@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../greatest_common_divisor_by_division.h"
-#include "../least_common_multiplier.h"
+#include "least_common_multiplier.h"
 
 TEST(LeastCommonMultiplier, HandlesOne) {
   EXPECT_EQ(1, LCM(1, 1));

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Prime Number Sieve (linear)
+# key: sieve
+# --
+`(insert-header-file-contents "prime_number_linear_sieve.h")`

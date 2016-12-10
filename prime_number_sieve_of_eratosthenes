@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Prime Number Sieve (of Eratosthenes)
+# key: eratos
+# --
+`(insert-header-file-contents "prime_number_sieve_of_eratosthenes.h")`

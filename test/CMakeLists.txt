@@ -15,10 +15,10 @@ set(SOURCES
     greatest_common_divisor_by_division_test.cc
     greatest_common_divisor_by_division_recursive_test.cc
     greatest_common_divisor_by_subtraction_test.cc
-    knuth_morris_pratt_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
     segment_tree_test.cc
+    string_search_knuth_morris_pratt_test.cc
     ternary_search_test.cc
     treap_with_implicit_key_test.cc
     )
@@ -38,12 +38,14 @@ set(HEADERS
     ../greatest_common_divisor_by_division.h
     ../greatest_common_divisor_by_division_recursive.h
     ../greatest_common_divisor_by_subtraction.h
-    ../knuth_morris_pratt.h
     ../least_common_multiplier.h
     ../modular_arithmetics.h
+    ../pi_function.h
     ../segment_tree.h
+    ../string_search_knuth_morris_pratt.h
     ../ternary_search.h
     ../treap_with_implicit_key.h
+    ../z_function.h
     )
 
 include_directories(../)

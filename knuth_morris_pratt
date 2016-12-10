@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Knuth-Morris-Pratt
-# key: kmp
-# --
-`(insert-header-file-contents "knuth_morris_pratt.h")`

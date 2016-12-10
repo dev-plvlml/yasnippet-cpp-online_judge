@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: Pi Function
-# key: getpi
+# name: Prefix function
+# key: pifunc
 # --
 `(insert-header-file-contents "pi_function.h")`

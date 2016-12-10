@@ -21,12 +21,14 @@ set(SOURCES
     greatest_common_divisor_by_subtraction_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
+    pi_function_test.cc
     prime_number_linear_sieve_test.cc
     prime_number_sieve_of_eratosthenes_test.cc
     segment_tree_test.cc
     string_search_knuth_morris_pratt_test.cc
     ternary_search_test.cc
     treap_with_implicit_key_test.cc
+    z_function_test.cc
     )
 
 set(HEADERS

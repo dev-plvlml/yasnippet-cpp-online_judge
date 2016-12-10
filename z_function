@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: Z Function
-# key: getz
+# name: Z-function
+# key: zfunc
 # --
 `(insert-header-file-contents "z_function.h")`

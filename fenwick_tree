@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: Fenwick Tree (Binary Indexed Tree)
-# key: fenw
+# key: fenwick
 # --
 `(insert-header-file-contents "fenwick_tree.h")`
-FenwickTree<${1:int}> ${2:fenw}(${3:n + 1});
+FenwickTree<${1:int}> ${2:fenwick}(${3:n + 1});

@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <functional>
+#include <iterator>
 #include <vector>
 
 template <typename T, class Function = std::plus<T>, class InvFunction = std::minus<T>>
@@ -12,11 +13,15 @@ class FenwickTree {
       : data_(size, init),
         init_(init)
   {}
-  
-  FenwickTree(const std::vector<T>& values, T init = T())
-      : FenwickTree(values.size(), init) {
-    for (size_t i = 0; i < values.size(); ++i) {
-      Set(i, values[i]);
+
+  template <typename It = T*>
+  FenwickTree(It first, It last, T init = T())
+      // NOTE: Delegation constructor fails
+      : data_(std::distance(first, last), init),
+        init_(init) {
+    size_t i = 0;
+    for (It it = first; it < last; ++it, ++i) {
+      Set(i, *it);
     }
   }
   

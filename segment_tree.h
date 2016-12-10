@@ -102,6 +102,8 @@ class SegmentTree {
   }
 
  private:
+  T* Data(size_t v) { return v < data_.size() ? &data_[v] : nullptr; }
+  
   T Calc(size_t v, size_t lv, size_t rv) {
     return Function()(data_[Left(v)], data_[Right(v)]);
   }
@@ -116,8 +118,7 @@ class SegmentTree {
   /*            */ size_t RRoot() const { return size_; }
   static size_t Left(size_t v) { return 2 * v + 1; }
   static size_t Right(size_t v) { return 2 * v + 2; }
-  static size_t Median(size_t l, size_t r) { return l + (r - l) / 2; }
-  T* Data(size_t v) { return v < data_.size() ? &data_[v] : nullptr; }
+  static size_t Median(size_t lv, size_t rv) { return lv + (rv - lv) / 2; }
 
  private:
   std::vector<T> data_;

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 namespace recursive {
-#include "../greatest_common_divisor_by_division_recursive.h"
+#include "greatest_common_divisor_by_division_recursive.h"
 }
 
 TEST(GreatestCommonDivisorByModuloRecursive, HandlesZero) {

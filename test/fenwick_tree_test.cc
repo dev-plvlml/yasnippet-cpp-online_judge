@@ -3,15 +3,15 @@
 #include <vector>
 #include <gtest/gtest.h>
 
-#include "../fenwick_tree.h"
+#include "fenwick_tree.h"
 
 TEST(FenwickTree, DefaultInstanceArbitrarySequence) {
   std::vector<int> numbers = {4, 8, 15, 16, 23, 42};
-  std::vector<int>  sums(numbers.size()), rsums(numbers.size());
+  std::vector<int> sums(numbers.size()), rsums(numbers.size());
   std::partial_sum(begin(numbers), end(numbers), begin(sums));
   std::partial_sum(rbegin(numbers), rend(numbers), begin(rsums));
 
-  FenwickTree<int> tree(numbers);
+  FenwickTree<int> tree(begin(numbers), end(numbers));
   for (int i = 0; i < 6; ++i) {
     EXPECT_EQ(numbers[i], tree.Get(i));
   }

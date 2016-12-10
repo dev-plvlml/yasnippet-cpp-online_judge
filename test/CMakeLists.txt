@@ -46,6 +46,7 @@ set(HEADERS
     ../treap_with_implicit_key.h
     )
 
+include_directories(../)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 find_package(GTest REQUIRED)

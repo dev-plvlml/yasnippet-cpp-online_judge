@@ -6,11 +6,11 @@
 #include "segment_tree_minmax.h"
 using namespace segm_tree;
 
-#include "../segment_tree.h"
+#include "segment_tree.h"
 
 TEST(SegmentTree, DefaultInstanceArbitrarySequence) {
   std::vector<int> numbers = {4, 8, 15, 16, 23, 42};
-  std::vector<int>  sums(numbers.size()), rsums(numbers.size());
+  std::vector<int> sums(numbers.size()), rsums(numbers.size());
   std::partial_sum(begin(numbers), end(numbers), begin(sums));
   std::partial_sum(rbegin(numbers), rend(numbers), begin(rsums));
 

@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cstdlib>
 namespace subtraction {
-#include "../greatest_common_divisor_by_subtraction.h"
+#include "greatest_common_divisor_by_subtraction.h"
 }
 
 TEST(GreatestCommonDivisorEuclidean, HandlesZero) {

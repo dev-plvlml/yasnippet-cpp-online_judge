@@ -2,7 +2,7 @@
 
 #include <cstdlib>
 namespace division {
-#include "../greatest_common_divisor_by_division.h"
+#include "greatest_common_divisor_by_division.h"
 }
 
 TEST(GreatestCommonDivisorByModulo, HandlesZero) {

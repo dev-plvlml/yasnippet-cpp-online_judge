@@ -7,7 +7,7 @@
 #include "treap_with_implicit_key_minmax.h"
 using namespace treap;
 
-#include "../treap_with_implicit_key.h"
+#include "treap_with_implicit_key.h"
 
 TEST(TreapWithImplicitKey, DefaultInstanceArbitraryInsertSequence) {
   std::vector<int> numbers = {4, 8, 15, 16, 23, 42};
@@ -39,12 +39,13 @@ TEST(TreapWithImplicitKey, DefaultInstanceArbitraryInsertSequence) {
 
 TEST(TreapWithImplicitKey, SumInstanceArbitrarySequence) {
   std::vector<int> numbers = {4, 8, 15, 16, 23, 42};
-  std::vector<int>  sums(numbers.size()), rsums(numbers.size());
+  std::vector<int> sums(numbers.size()), rsums(numbers.size());
   std::partial_sum(begin(numbers), end(numbers), begin(sums));
   std::partial_sum(rbegin(numbers), rend(numbers), begin(rsums));
 
   using namespace treap;
-  Treap<SumData, SumData::Maintainer> tree(numbers);
+  Treap<SumData, SumData::Maintainer>
+      tree(begin(numbers), end(numbers));
   for (int i = 0; i < 6; ++i) {
     ASSERT_EQ(numbers[i], tree.Get(i).value);
   }
@@ -69,7 +70,8 @@ TEST(TreapWithImplicitKey, SumInstanceArbitrarySequence) {
 TEST(TreapWithImplicitKey, MinMaxInstanceArbitrarySequence) {
   std::vector<int> numbers = {4, 8, 15, 16, 23, 42};
 
-  Treap<MinMaxData, MinMaxData::Maintainer, MinMaxData::Propagator> tree(numbers);
+  Treap<MinMaxData, MinMaxData::Maintainer, MinMaxData::Propagator>
+      tree(begin(numbers), end(numbers));
   for (int i = 0; i < 6; ++i) {
     ASSERT_EQ(numbers[i], tree.Get(i).min);
     ASSERT_EQ(numbers[i], tree.Get(i).max);

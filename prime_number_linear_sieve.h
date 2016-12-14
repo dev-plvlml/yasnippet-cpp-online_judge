@@ -6,23 +6,32 @@
 #include <utility>
 #include <vector>
 
-std::pair<std::vector<unsigned>, std::vector<unsigned>> GetPrimes_N(size_t n) {
-  std::vector<unsigned> primes;
-  primes.reserve(n / std::log(n));
-  std::vector<unsigned> lpd(n+1, 0);  // Least Prime Divisor
-  for (unsigned i = 2; i <= n; ++i) {
-    if (!lpd[i]) {
-      lpd[i] = i;
-      primes.push_back(i);
-    }
-    for (size_t j = 0; j < primes.size() && primes[j] <= lpd[i]; ++j) {
-      // Reducing integer overflow risks:
-      if (i * 1uLL * primes[j] > n)
-        break;
-      lpd[i * primes[j]] = primes[j];
+class LinearSieve {
+ public:
+  LinearSieve(size_t n) {
+    primes_.reserve(n / std::log(n));
+    lpd_.resize(n+1, 0);
+    for (unsigned i = 2; i <= n; ++i) {
+      if (!lpd_[i]) {
+        lpd_[i] = i;
+        primes_.push_back(i);
+      }
+      for (size_t j = 0; j < primes_.size() && primes_[j] <= lpd_[i]; ++j) {
+        // Reducing integer overflow risks:
+        if (i * 1uLL * primes_[j] > n)
+          break;
+        lpd_[i * primes_[j]] = primes_[j];
+      }
     }
   }
-  return {std::move(primes), std::move(lpd)};
-}
+
+  const auto& GetPrimes() const { return primes_; }
+  const auto& GetLpd() const { return lpd_; }
+  unsigned Lpd(size_t i) const { return lpd_[i]; }
+
+ private:
+  std::vector<unsigned> primes_;
+  std::vector<unsigned> lpd_;  // Least Prime Divisor
+};
 
 #endif  // PRIME_NUMBER_LINEAR_SIEVE_H_

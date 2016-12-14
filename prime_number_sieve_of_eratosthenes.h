@@ -6,23 +6,32 @@
 #include <utility>
 #include <vector>
 
-std::pair<std::vector<unsigned>, std::vector<char>> GetPrimes_NloglogN(size_t n) {
-  std::vector<unsigned> primes;
-  primes.reserve(n / std::log(n));
-  std::vector<char> is_prime(n+1, true);
-  is_prime[0] = is_prime[1] = false;
-  for (unsigned i = 2; i <= n; ++i) {
-    if (is_prime[i]) {
-      primes.push_back(i);
-      // Reducing integer overflow risks:
-      if (i * 1uLL * i > n)
-        break;
-      for (unsigned j = i * i; j <= n; j += i) {
-        is_prime[j] = false;
+class Sieve {
+ public:
+  Sieve(size_t n) {
+    primes_.reserve(n / std::log(n));
+    is_prime_.resize(n+1, true);
+    is_prime_[0] = is_prime_[1] = false;
+    for (unsigned i = 2; i <= n; ++i) {
+      if (is_prime_[i]) {
+        primes_.push_back(i);
+        // Reducing integer overflow risks:
+        if (i * 1uLL * i > n)
+          continue;
+        for (unsigned j = i * i; j <= n; j += i) {
+          is_prime_[j] = false;
+        }
       }
     }
   }
-  return {std::move(primes), std::move(is_prime)};
-}
+
+  const auto& GetPrimes() const { return primes_; }
+  const auto& GetIsPrime() const { return is_prime_; }
+  bool IsPrime(size_t i) const { return is_prime_[i]; }
+
+ private:
+  std::vector<unsigned> primes_;
+  std::vector<char> is_prime_;
+};
 
 #endif  // PRIME_NUMBER_SIEVE_OF_ERATOSHPENES_H_

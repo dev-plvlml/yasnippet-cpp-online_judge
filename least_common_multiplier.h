@@ -9,9 +9,9 @@ T LCM(T a, T b) {
   a = abs(a);
   b = abs(b);
   // According to a formula:
-  // return (a * b) / GCD(a, b);
+  // return (a * b) / GCD_ByDiv(a, b);
   // Reducing integer overflow risks:
-  return a / GCD(a, b) * b;
+  return a / GCD_ByDiv(a, b) * b;
 }
 
 #endif  // LEAST_COMMON_MULTIPLIER_H_

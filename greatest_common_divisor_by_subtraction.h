@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 template <typename T>
-T GCD(T a, T b) {
+T GCD_BySub(T a, T b) {
   a = abs(a);
   b = abs(b);
   while (a != 0 && b != 0) {

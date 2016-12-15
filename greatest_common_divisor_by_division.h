@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 template <typename T>
-T GCD(T a, T b) {
+T GCD_ByDiv(T a, T b) {
   a = abs(a);
   b = abs(b);
   while (b != 0) {

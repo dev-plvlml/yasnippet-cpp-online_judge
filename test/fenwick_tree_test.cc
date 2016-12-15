@@ -1,4 +1,4 @@
-#include <algorithm>
+#include <iterator>
 #include <numeric>
 #include <vector>
 #include <gtest/gtest.h>

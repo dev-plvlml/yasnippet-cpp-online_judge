@@ -1,5 +1,7 @@
 #include <algorithm>
+#include <iterator>
 #include <numeric>
+#include <utility>
 #include <vector>
 #include <gtest/gtest.h>
 

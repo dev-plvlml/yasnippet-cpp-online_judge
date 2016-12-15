@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include <gtest/gtest.h>
 
 #include "pi_function.h"

@@ -1,7 +1,9 @@
 #ifndef SEGMENT_TREE_MINMAX_H_
 #define SEGMENT_TREE_MINMAX_H_
 
+#include <climits>
 #include <queue>
+#include <utility>
 
 namespace segm_tree {
 

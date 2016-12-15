@@ -1,7 +1,9 @@
 #ifndef TREAP_WITH_IMPLICIT_KEY_MINMAX_H_
 #define TREAP_WITH_IMPLICIT_KEY_MINMAX_H_
 
+#include <climits>
 #include <queue>
+#include <utility>
 
 namespace treap {
 

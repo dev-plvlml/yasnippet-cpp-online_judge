@@ -26,6 +26,7 @@ set(SOURCES
     prime_number_sieve_of_eratosthenes_test.cc
     segment_tree_test.cc
     string_search_knuth_morris_pratt_test.cc
+    suffix_automaton_test.cc
     ternary_search_test.cc
     treap_with_implicit_key_test.cc
     z_function_test.cc
@@ -62,6 +63,7 @@ set(HEADERS
     ../prime_number_linear_sieve.h
     ../prime_number_sieve_of_eratosthenes.h
     ../segment_tree.h
+    ../suffix_automaton.h
     ../string_search_knuth_morris_pratt.h
     ../ternary_search.h
     ../treap_with_implicit_key.h

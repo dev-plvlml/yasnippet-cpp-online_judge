@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Suffix Automaton (Directed Acyclic Word Graph)
+# key: dawg
+# --
+`(insert-header-file-contents "suffix_automaton.h")`

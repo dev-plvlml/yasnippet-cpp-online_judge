@@ -31,7 +31,7 @@ class DAWG {
         if (states_[q_link_next].length == states_[q_link].length + 1) {
           states_[q_cur].link = q_link_next;
         } else {
-          int q_link_next_clone = states_.size() + 1;
+          int q_link_next_clone = states_.size();
           states_.push_back(states_[q_link_next]);
           states_[q_link_next_clone].length = states_[q_link].length + 1;
           for (q_link;
@@ -63,6 +63,7 @@ class DAWG {
   struct State {
     size_t length;
     int link;
+    //! Transition function:
     std::map<char, int> next;
   };
 

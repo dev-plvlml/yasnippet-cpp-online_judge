@@ -53,3 +53,18 @@ TEST(SuffixAutomaton, aba) {
   EXPECT_EQ(false, dawg.IsSubstr("baa"));
   EXPECT_EQ(false, dawg.IsSubstr("bab"));
 }
+
+TEST(SuffixAutomaton, abcbc) {
+  DAWG dawg("abcbc");
+  EXPECT_EQ(true, dawg.IsSubstr(""));
+  EXPECT_EQ(true, dawg.IsSubstr("a"));
+  EXPECT_EQ(true, dawg.IsSubstr("b"));
+  EXPECT_EQ(true, dawg.IsSubstr("c"));
+  EXPECT_EQ(true, dawg.IsSubstr("ab"));
+  EXPECT_EQ(true, dawg.IsSubstr("bc"));
+  EXPECT_EQ(true, dawg.IsSubstr("abc"));
+  EXPECT_EQ(true, dawg.IsSubstr("bcb"));
+  EXPECT_EQ(true, dawg.IsSubstr("cbc"));
+  EXPECT_EQ(false, dawg.IsSubstr("bcc"));
+  EXPECT_EQ(false, dawg.IsSubstr("cbb"));
+}

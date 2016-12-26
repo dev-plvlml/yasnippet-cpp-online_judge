@@ -6,13 +6,13 @@
 #include <utility>
 #include <vector>
 
-class Sieve {
+class SieveOfEratosthenes {
  public:
-  Sieve(size_t n) {
+  SieveOfEratosthenes(size_t n) {
     primes_.reserve(n / std::log(n));
-    is_prime_.resize(n+1, true);
+    is_prime_.resize(n, true);
     is_prime_[0] = is_prime_[1] = false;
-    for (unsigned i = 2; i <= n; ++i) {
+    for (unsigned i = 2; i < n; ++i) {
       if (is_prime_[i]) {
         primes_.push_back(i);
         // Reducing integer overflow risks:

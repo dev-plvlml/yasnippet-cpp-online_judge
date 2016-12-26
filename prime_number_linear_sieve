@@ -3,3 +3,4 @@
 # key: sieve
 # --
 `(insert-header-file-contents "prime_number_linear_sieve.h")`
+LinearSieve ${1:sieve}(${2:n + 1});

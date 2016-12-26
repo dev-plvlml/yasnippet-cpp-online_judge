@@ -64,6 +64,7 @@ set(HEADERS
     ../prime_number_sieve_of_eratosthenes.h
     ../segment_tree.h
     ../suffix_automaton.h
+    ../suffix_automaton_longest_common_substring.h
     ../string_search_knuth_morris_pratt.h
     ../ternary_search.h
     ../treap_with_implicit_key.h

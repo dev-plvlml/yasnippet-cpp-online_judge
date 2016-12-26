@@ -3,4 +3,4 @@
 # key: dsu
 # --
 `(insert-header-file-contents "disjoint_set_union_by_size.h")`
-DSU ${1:dsu}(${2:n + 1});
+DSU<DSU_BySize_Tag> ${1:dsu}(${2:n + 1});

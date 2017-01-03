@@ -21,11 +21,13 @@ set(SOURCES
     greatest_common_divisor_by_subtraction_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
-    pi_function_test.cc
+    prefix_function_test.cc
     prime_number_linear_sieve_test.cc
     prime_number_sieve_of_eratosthenes_test.cc
     segment_tree_test.cc
-    string_search_knuth_morris_pratt_test.cc
+    substring_search_knuth_morris_pratt_test.cc
+    substring_search_knuth_morris_pratt_alternative_test.cc
+    substring_search_z_algorithm_test.cc
     suffix_automaton_test.cc
     ternary_search_test.cc
     treap_with_implicit_key_test.cc
@@ -59,13 +61,15 @@ set(HEADERS
     ../greatest_common_divisor_by_subtraction.h
     ../least_common_multiplier.h
     ../modular_arithmetics.h
-    ../pi_function.h
+    ../prefix_function.h
     ../prime_number_linear_sieve.h
     ../prime_number_sieve_of_eratosthenes.h
     ../segment_tree.h
     ../suffix_automaton.h
     ../suffix_automaton_longest_common_substring.h
-    ../string_search_knuth_morris_pratt.h
+    ../substring_search_knuth_morris_pratt.h
+    ../substring_search_knuth_morris_pratt_alternative.h
+    ../substring_search_z_algorithm.h
     ../ternary_search.h
     ../treap_with_implicit_key.h
     ../z_function.h

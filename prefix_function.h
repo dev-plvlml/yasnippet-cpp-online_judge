@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-inline std::vector<size_t> GetPiFunction(const std::string& s) {
+inline std::vector<size_t> GetPrefixFunction(const std::string &s) {
   std::vector<size_t> pi(s.size());
   size_t q = 0;
   pi[q] = 0;

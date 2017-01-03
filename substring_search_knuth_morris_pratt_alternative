@@ -2,4 +2,4 @@
 # name: Knuth-Morris-Pratt Algorithm (string search)
 # key: kmp
 # --
-`(insert-header-file-contents "string_search_knuth_morris_pratt.h")`
+`(insert-header-file-contents "string_search_knuth_morris_pratt_alternative.h")`

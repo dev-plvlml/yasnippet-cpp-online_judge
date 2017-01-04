@@ -40,9 +40,9 @@ set(HEADERS
     treap_with_implicit_key_minmax.h
     ../binomial_coefficient_floating_point.h
     ../binomial_coefficient_integer.h
-    ../convex_hull_chans_algorithm_test.h
+    ../convex_hull_chans_algorithm.h
     ../convex_hull_grahams_scan.h
-    ../convex_hull_jarvis_march_test.h
+    ../convex_hull_jarvis_march.h
     ../disjoint_set_union_by_size.h
     ../disjoint_set_union_randomized.h
     ../fenwick_tree.h

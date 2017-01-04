@@ -5,7 +5,7 @@
 #include "geometry/6_convex_polygon.h"
 
 template <typename T>
-ConvexPolygon<T> GetConvexHull(const std::vector<Point<T>>& pts) {
+ConvexPolygon<T> GrahamsScan(const std::vector<Point<T>>& pts) {
   ConvexPolygon<T> hull;
   // TODO: implement Graham's Scan
   return hull;

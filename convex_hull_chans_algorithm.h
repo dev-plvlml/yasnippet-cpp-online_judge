@@ -4,8 +4,8 @@
 #include <vector>
 #include "geometry/6_convex_polygon.h"
 
-template <typename T>
-ConvexPolygon<T> GetConvexHull(const std::vector<Point<T>>& pts) {
+template <typename T, typename Tag>
+ConvexPolygon<T> ChansAlgorithm(const std::vector<Point<T>>& pts) {
   ConvexPolygon<T> hull;
   // TODO: implement Chan's Algorithm
   return hull;

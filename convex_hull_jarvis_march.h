@@ -5,7 +5,7 @@
 #include "geometry/6_convex_polygon.h"
 
 template <typename T>
-ConvexPolygon<T> GetConvexHull(const std::vector<Point<T>>& pts) {
+ConvexPolygon<T> JarvisMarch(const std::vector<Point<T>>& pts) {
   ConvexPolygon<T> hull;
   // TODO: implement Jarvis' March
   return hull;

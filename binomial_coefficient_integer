@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Binomial Coefficient (integer)
+# key: comb
+# --
+`(insert-header-file-contents "binomial_coefficient_integer.h")`

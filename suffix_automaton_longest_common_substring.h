@@ -23,7 +23,6 @@ std::string DAWG::LCS(const std::string& s) const {
       }
     }
   }
-  // Eliminating integer overflow risks:
   return s.substr(i_max + 1 - max_length, max_length);
 }
 

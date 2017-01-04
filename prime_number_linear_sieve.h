@@ -11,7 +11,7 @@ class LinearSieve {
   LinearSieve(size_t n) {
     primes_.reserve(n / std::log(n));
     lpd_.resize(n, 0);
-    for (unsigned i = 2; i < n; ++i) {
+    for (size_t i = 2; i < n; ++i) {
       if (!lpd_[i]) {
         lpd_[i] = i;
         primes_.push_back(i);
@@ -25,14 +25,14 @@ class LinearSieve {
     }
   }
 
+  const auto& GetLPD() const { return lpd_; }  //!< Least Prime Divisor
   const auto& GetPrimes() const { return primes_; }
-  const auto& GetLpd() const { return lpd_; }
-  unsigned Lpd(size_t i) const { return lpd_[i]; }
-  bool IsPrime(unsigned i) const { return i >= 2 && lpd_[i] == i; }
+  bool IsPrime(size_t i) const { return i >= 2 && lpd_[i] == i; }
+  unsigned LPD(size_t i) const { return lpd_[i]; }
 
  private:
-  std::vector<unsigned> primes_;
-  std::vector<unsigned> lpd_;  // Least Prime Divisor
+  std::vector<size_t> primes_;
+  std::vector<size_t> lpd_;
 };
 
 #endif  // PRIME_NUMBER_LINEAR_SIEVE_H_

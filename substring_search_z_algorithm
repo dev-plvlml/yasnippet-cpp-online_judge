@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Z-Algorithm (substring search)
+# key: zalgo
+# --
+`(insert-header-file-contents "substring_search_z_algorithm.h")`

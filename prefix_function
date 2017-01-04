@@ -2,4 +2,4 @@
 # name: Prefix function
 # key: pifunc
 # --
-`(insert-header-file-contents "pi_function.h")`
+`(insert-header-file-contents "prefix_function.h")`

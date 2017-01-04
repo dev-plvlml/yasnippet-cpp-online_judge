@@ -12,25 +12,25 @@ class SieveOfEratosthenes {
     primes_.reserve(n / std::log(n));
     is_prime_.resize(n, true);
     is_prime_[0] = is_prime_[1] = false;
-    for (unsigned i = 2; i < n; ++i) {
+    for (size_t i = 2; i < n; ++i) {
       if (is_prime_[i]) {
         primes_.push_back(i);
         // Reducing integer overflow risks:
         if (i * 1uLL * i > n)
           continue;
-        for (unsigned j = i * i; j <= n; j += i) {
+        for (size_t j = i * i; j <= n; j += i) {
           is_prime_[j] = false;
         }
       }
     }
   }
 
-  const auto& GetPrimes() const { return primes_; }
   const auto& GetIsPrime() const { return is_prime_; }
+  const auto& GetPrimes() const { return primes_; }
   bool IsPrime(size_t i) const { return is_prime_[i]; }
 
  private:
-  std::vector<unsigned> primes_;
+  std::vector<size_t> primes_;
   std::vector<char> is_prime_;
 };
 

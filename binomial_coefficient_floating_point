@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: Binomial Coefficient (floating point)
-# key: comb
+# key: fcomb
 # --
 `(insert-header-file-contents "binomial_coefficient_floating_point.h")`

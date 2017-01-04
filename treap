@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Treap (Cartesian Tree)
-# key: treap
-# --
-`(insert-header-file-contents "c++-mode/online_judge/treap.h")`

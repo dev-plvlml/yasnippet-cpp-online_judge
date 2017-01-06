@@ -21,6 +21,7 @@ set(SOURCES
     greatest_common_divisor_by_subtraction_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
+    palindromic_tree_test.cc
     prefix_function_test.cc
     prime_number_linear_sieve_test.cc
     prime_number_sieve_of_eratosthenes_test.cc
@@ -61,6 +62,7 @@ set(HEADERS
     ../greatest_common_divisor_by_subtraction.h
     ../least_common_multiplier.h
     ../modular_arithmetics.h
+    ../palindromic_tree.h
     ../prefix_function.h
     ../prime_number_linear_sieve.h
     ../prime_number_sieve_of_eratosthenes.h

@@ -17,11 +17,9 @@ class DAWG {
     q_last_ = q_cur;
   }
 
-  DAWG(std::string t): DAWG() {
-    states_.reserve(2 * t.size() - 1);
-    for (char c : t) {
-      PushBack(c);
-    }
+  DAWG(const std::string& t): DAWG() {
+    states_.reserve(2 * t.length() - 1);
+    for (char c : t) PushBack(c);
   }
 
   void PushBack(char c) {
@@ -75,8 +73,8 @@ class DAWG {
  private:
   struct State {
     size_t length;
-    int link;
-    //! Transition function:
+    int link;  //!< Suffix link
+    //! Transition function
     std::map<char, int> next;
   };
 

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Palindromic Tree
+# key: palindr
+# --
+`(insert-header-file-contents "palindromic_tree.h")`

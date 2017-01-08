@@ -1,18 +1,19 @@
 #ifndef BINOMIAL_COEFFICIENT_FLOATING_POINT_H_
 #define BINOMIAL_COEFFICIENT_FLOATING_POINT_H_
 
+#include <cmath>
+
 template <typename T, typename FP = double>
-T fComb(T n0, T k0) {
-  constexpr FP eps = 0.5;
-  if (k0 > n0) return 0;
-  if (k0 > n0 - k0) {
-    k0 = n0 - k0;
+T FComb(T n, T k) {
+  if (k > n) return 0;
+  if (k > n - k) {
+    k = n - k;
   }
   FP result = 1.0;
-  for (FP k = 1.0, n = n0 - k0 + 1; k <= k0; ++k, ++n) {
-    result *= n / k;
+  for (FP ki = 1.0, ni = n - k + 1; ki <= k; ++ki, ++ni) {
+    result *= ni / ki;
   }
-  return static_cast<T>(result + eps);
+  return std::round(result);
 }
 
 #endif  // BINOMIAL_COEFFICIENT_FLOATING_POINT_H_

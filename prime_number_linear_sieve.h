@@ -28,7 +28,7 @@ class LinearSieve {
   const auto& GetLPD() const { return lpd_; }  //!< Least Prime Divisor
   const auto& GetPrimes() const { return primes_; }
   bool IsPrime(size_t i) const { return i >= 2 && lpd_[i] == i; }
-  unsigned LPD(size_t i) const { return lpd_[i]; }
+  size_t LPD(size_t i) const { return lpd_[i]; }
 
  private:
   std::vector<size_t> primes_;

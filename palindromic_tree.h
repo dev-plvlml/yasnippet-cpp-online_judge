@@ -7,8 +7,8 @@
 
 class PalindromicTree {
  public:
-  PalindromicTree() {
-    text_.push_back('#');
+  PalindromicTree(char d = '#') {
+    text_.push_back(d);
     states_.push_back(State());
     states_[0].length = -1;
     states_[0].link = -1;

@@ -26,8 +26,8 @@ set(SOURCES
     prime_number_linear_sieve_test.cc
     prime_number_sieve_of_eratosthenes_test.cc
     segment_tree_test.cc
-    substring_search_knuth_morris_pratt_test.cc
-    substring_search_knuth_morris_pratt_alternative_test.cc
+    substring_search_kmp_algorithm_test.cc
+    substring_search_kmp_algorithm_online_test.cc
     substring_search_z_algorithm_test.cc
     suffix_automaton_test.cc
     ternary_search_test.cc
@@ -69,8 +69,8 @@ set(HEADERS
     ../segment_tree.h
     ../suffix_automaton.h
     ../suffix_automaton_longest_common_substring.h
-    ../substring_search_knuth_morris_pratt.h
-    ../substring_search_knuth_morris_pratt_alternative.h
+    ../substring_search_kmp_algorithm.h
+    ../substring_search_kmp_algorithm_online.h
     ../substring_search_z_algorithm.h
     ../ternary_search.h
     ../treap_with_implicit_key.h

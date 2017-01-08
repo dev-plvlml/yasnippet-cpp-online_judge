@@ -2,26 +2,26 @@
 #include <string>
 #include <gtest/gtest.h>
 
-#include "substring_search_knuth_morris_pratt.h"
+#include "substring_search_kmp_algorithm.h"
 
-TEST(KnuthMorrisPratt, DISABLED_HandlesEmpty) {
+TEST(KMPAlgorithm, DISABLED_HandlesEmpty) {
   std::string foobar = "foobar", empty = "";
   EXPECT_EQ(foobar.find(empty), KMPAlgorithm(foobar, empty));
   EXPECT_EQ(empty.find(foobar), KMPAlgorithm(empty, foobar));
   EXPECT_EQ(empty.find(empty), KMPAlgorithm(empty, empty));
 }
 
-TEST(KnuthMorrisPratt, HandlesEqual) {
+TEST(KMPAlgorithm, HandlesEqual) {
   std::string foobar = "foobar";
   EXPECT_EQ(foobar.find(foobar), KMPAlgorithm(foobar, foobar));
 }
 
-TEST(KnuthMorrisPratt, CormenSequence) {
+TEST(KMPAlgorithm, CormenSequence) {
   std::string text = "bacbababaabcbab", pattern = "ababaca";
   EXPECT_EQ(text.find(pattern), KMPAlgorithm(text, pattern));
 }
 
-TEST(KnuthMorrisPratt, ababaca) {
+TEST(KMPAlgorithm, ababaca) {
   std::string ababaca = "ababaca";
   EXPECT_EQ(ababaca.find("a"), KMPAlgorithm(ababaca, "a"));
   EXPECT_EQ(ababaca.find("b"), KMPAlgorithm(ababaca, "b"));

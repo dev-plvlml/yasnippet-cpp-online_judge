@@ -1,12 +1,14 @@
-#ifndef SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_ALTERNATIVE_H_
-#define SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_ALTERNATIVE_H_
+#ifndef SUBSTRING_SEARCH_KMP_ALGORITHM_ONLINE_H_
+#define SUBSTRING_SEARCH_KMP_ALGORITHM_ONLINE_H_
 
 #include <cstddef>
 #include <string>
 #include <vector>
 #include "prefix_function.h"
 
-size_t KMPAlgorithm_Alt(const std::string& t, const std::string& p) {
+// TODO: refactor into a class with bool PushBack(char c) method
+size_t KMPAlgorithm_Online(const std::string& t, const std::string& p) {
+  // TODO: refactor into a class constructor
   std::vector<size_t> pi = GetPrefixFunction(p);
   size_t q = 0;
   for (size_t i = 0; i < t.size(); ++i) {
@@ -23,4 +25,4 @@ size_t KMPAlgorithm_Alt(const std::string& t, const std::string& p) {
   return t.npos;
 }
 
-#endif  // SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_ALTERNATIVE_H_
+#endif  // SUBSTRING_SEARCH_KMP_ALGORITHM_ONLINE_H_

@@ -1,5 +1,5 @@
-#ifndef SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_H_
-#define SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_H_
+#ifndef SUBSTRING_SEARCH_KMP_ALGORITHM_H_
+#define SUBSTRING_SEARCH_KMP_ALGORITHM_H_
 
 #include <cstddef>
 #include <string>
@@ -16,4 +16,4 @@ size_t KMPAlgorithm(const std::string& t, const std::string& p, char d = '#') {
   return t.npos;
 }
 
-#endif  // SUBSTRING_SEARCH_KNUTH_MORRIS_PRATT_H_
+#endif  // SUBSTRING_SEARCH_KMP_ALGORITHM_H_

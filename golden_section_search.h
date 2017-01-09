@@ -3,11 +3,10 @@
 
 #include <cmath>
 #include <functional>
+#include "main.h"
 
 template <class T, class Function, class Compare = std::less<T>>
 T GoldenSectionSearch(T x1, T x2, Function function, Compare compare = Compare()) {
-  constexpr T eps = 1.0e-9;
-  const T phi = (1.0 + std::sqrt(5.0)) / 2.0; 
   T xL = x1 + (x2 - x1) * (2 - phi);
   T xR = x2 - (x2 - x1) * (2 - phi);
   T fL = function(xL);

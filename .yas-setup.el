@@ -8,5 +8,6 @@
                                           (car yas-snippet-dirs))))
     (goto-char (point-min))
     (while (re-search-forward "^[[:space:]]*#[[:space:]]*include[[:space:]]+\"\\(.+\\)\"[[:space:]]*\\(?://.*\\)?$" nil t)
-      (replace-match (insert-header-file-contents (match-string 1))))
+	    (unless (string-equal (match-string 1) "main.h")
+        (replace-match (insert-header-file-contents (match-string 1)))))
     (buffer-string)))

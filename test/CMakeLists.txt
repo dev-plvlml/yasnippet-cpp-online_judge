@@ -63,6 +63,7 @@ set(HEADERS
     ../greatest_common_divisor_by_division_recursive.h
     ../greatest_common_divisor_by_subtraction.h
     ../least_common_multiplier.h
+    ../main.h
     ../modular_arithmetics.h
     ../palindromic_tree.h
     ../prefix_function.h

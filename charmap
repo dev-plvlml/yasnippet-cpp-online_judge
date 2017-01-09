@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Character indexed array-based map (STL-like)
+# key: charmap
+# --
+`(insert-header-file-contents "charmap.h")`

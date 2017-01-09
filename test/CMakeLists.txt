@@ -6,6 +6,7 @@ enable_testing()
 set(SOURCES
     binomial_coefficient_floating_point_test.cc
     binomial_coefficient_integer_test.cc
+    charmap_test.cc
     convex_hull_chans_algorithm_test.cc
     convex_hull_grahams_scan_test.cc
     convex_hull_jarvis_march_test.cc
@@ -41,6 +42,7 @@ set(HEADERS
     treap_with_implicit_key_minmax.h
     ../binomial_coefficient_floating_point.h
     ../binomial_coefficient_integer.h
+    ../charmap.h
     ../convex_hull_chans_algorithm.h
     ../convex_hull_grahams_scan.h
     ../convex_hull_jarvis_march.h

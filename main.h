@@ -34,7 +34,10 @@ constexpr char eol = '\n';
 template <typename FP>
 inline bool Eq(FP lhs, FP rhs) { return fabs(lhs - rhs) < eps; }
 
-template <int i, typename T>
-inline T Pow(T x) { return i ? x * Pow<i-1>(x) : 1; }
+template <typename T>
+inline T Pow2(T x) { return x * x; }
+
+template <typename T>
+inline T Pow3(T x) { return x * x * x; }
 
 #endif  // MAIN_H_

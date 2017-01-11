@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "palindrome_search_manachers_algorithm.h"
+#include "manachers_algorithm.h"
 
 TEST(ManachersAlgorithm, OddPalindromes) {
   EXPECT_EQ(12, CountPalindromes("abacaba"));

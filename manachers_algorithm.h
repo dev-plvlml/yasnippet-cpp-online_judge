@@ -14,7 +14,7 @@ ManachersAlgorithm(const std::string &s) {
   radius_[1].resize(s.length(), 0);
   for (int p : {0, 1}) {  // p for parity: 0 - odd, 1 - even
     int l = 0, r = 0;  // rightmost palindrome
-    radius_[p][0] = 1;
+    radius_[p][0] = !p;
     for (int i = 1; i < s.size(); ++i) {
       if (i <= r) {
         radius_[p][i] = std::min(radius_[p][l + (r - i) + p], (r - i) + 1);

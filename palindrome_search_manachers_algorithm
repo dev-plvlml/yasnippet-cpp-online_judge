@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Manacher's Algorithm (palindrome count, longest palindromic substring)
+# key: manacher
+# --
+`(insert-header-file-contents "palindrome_search_manachers_algorithm.h")`

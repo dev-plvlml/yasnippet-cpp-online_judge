@@ -22,7 +22,7 @@ set(SOURCES
     greatest_common_divisor_by_subtraction_test.cc
     least_common_multiplier_test.cc
     modular_arithmetics_test.cc
-    palindrome_count_manacher_algorithm_test.cc
+    palindrome_search_manachers_algorithm_test.cc
     palindromic_tree_test.cc
     prefix_function_test.cc
     prime_number_linear_sieve_test.cc
@@ -66,7 +66,7 @@ set(HEADERS
     ../least_common_multiplier.h
     ../main.h
     ../modular_arithmetics.h
-    ../palindrome_count_manacher_algorithm.h
+    ../palindrome_search_manachers_algorithm.h
     ../palindromic_tree.h
     ../prefix_function.h
     ../prime_number_linear_sieve.h

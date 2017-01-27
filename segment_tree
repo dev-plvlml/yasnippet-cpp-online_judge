@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Segment Tree
-# key: segm
-# --
-`(insert-header-file-contents "segment_tree.h")`
-SegmentTree<${1:int}> ${2:segm}(${3:n + 1});

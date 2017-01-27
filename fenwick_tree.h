@@ -39,7 +39,7 @@ class FenwickTree {
 
   T Query(size_t pos, size_t count) const {
     T result = Query(pos + count);
-    if (pos) {
+    if (pos != 0) {
       result = InvFunction()(result, Query(pos));
     }
     return result;

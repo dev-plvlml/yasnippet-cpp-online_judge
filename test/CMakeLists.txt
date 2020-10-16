@@ -27,7 +27,7 @@ set(SOURCES
     prefix_function_test.cc
     prime_number_linear_sieve_test.cc
     prime_number_sieve_of_eratosthenes_test.cc
-    segment_tree_test.cc
+    segment_tree_recursive_test.cc
     substring_search_kmp_algorithm_test.cc
     substring_search_kmp_algorithm_online_test.cc
     substring_search_z_algorithm_test.cc
@@ -85,9 +85,14 @@ set(HEADERS
 include_directories(../)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
+
 find_package(GTest REQUIRED)
-if (GTEST_FOUND)
-  target_link_libraries(${PROJECT_NAME} GTest::GTest GTest::Main)
-endif (GTEST_FOUND)
+if (GTest_FOUND)
+  target_include_directories(${PROJECT_NAME}
+      SYSTEM PRIVATE ${GTest_INCLUDE_DIR})
+  target_link_libraries(${PROJECT_NAME}
+      PRIVATE ${GTest_LIBRARIES})
+endif (GTest_FOUND)
 
 add_test(AllTests ${PROJECT_NAME})

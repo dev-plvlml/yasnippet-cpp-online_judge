@@ -31,7 +31,7 @@ class FenwickTree {
 
   T Query(size_t count) const {
     T result = init_;
-    for (int i = int{count} - 1; i >= 0; i = F(i) - 1) {
+    for (int i = (int)count - 1; i >= 0; i = F(i) - 1) {
       result = Function()(result, data_[i]);
     }
     return result;

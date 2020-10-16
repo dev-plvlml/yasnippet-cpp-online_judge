@@ -36,9 +36,9 @@ class FenwickTree3d {
 
   T Query(size_t i_count, size_t j_count, size_t k_count) const {
     T result = init_;
-    for (int i = int{i_count} - 1; i >= 0; i = F(i) - 1) {
-      for (int j = int{j_count} - 1; j >= 0; j = F(j) - 1) {
-        for (int k = int{k_count} - 1; k >= 0; k = F(k) - 1) {
+    for (int i = (int)i_count - 1; i >= 0; i = F(i) - 1) {
+      for (int j = (int)j_count - 1; j >= 0; j = F(j) - 1) {
+        for (int k = (int)k_count - 1; k >= 0; k = F(k) - 1) {
           result = Function()(result, data_[i][j][k]);
         }
       }
